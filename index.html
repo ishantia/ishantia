@@ -109,7 +109,7 @@
       animation: fillAnimation 2s ease-in-out;
     }
     .projects-content {
-      overflow-x: auto;
+      overflow-x: hidden;
       white-space: nowrap;
       padding: 20px 0;
     }
@@ -147,6 +147,26 @@
     .contact-content form button:hover {
       background: #2980b9;
     }
+    .social-buttons {
+      text-align: center;
+      padding: 20px 0;
+    }
+    .social-buttons a {
+      display: inline-block;
+      margin: 0 10px;
+      padding: 10px;
+      background: #2c3e50;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+    .social-buttons a:hover {
+      background: #34495e;
+    }
+    .social-buttons a i {
+      margin-right: 5px;
+    }
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
@@ -174,7 +194,7 @@
     }
     .background span {
       position: absolute;
-      background: #4a90e2; /* رنگ متفاوت برای دایره‌ها */
+      background: #4a90e2;
       border-radius: 50%;
       animation: float 15s infinite;
     }
@@ -182,6 +202,14 @@
       0% { transform: translateY(0) scale(1); }
       50% { transform: translateY(-20px) scale(1.2); }
       100% { transform: translateY(0) scale(1); }
+    }
+    /* Hide scrollbar */
+    .projects-content::-webkit-scrollbar {
+      display: none;
+    }
+    .projects-content {
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
     }
   </style>
 </head>
@@ -219,7 +247,8 @@
   <div class="section" id="about">
     <h2>About Me</h2>
     <div class="about-content">
-      <p>Hello! I'm Shantia, a passionate student and developer with experience in Android tinkering (custom ROMs, root, kernel tweaks) and open-source projects. My journey in tech began with a curiosity about how mobile systems work, leading me to explore Android development. Since then, I've worked on various projects ranging from custom mods to utilities. When I'm not coding, you can find me exploring new technologies, contributing to open-source, or enhancing my skills through continuous learning.</p>
+      <p>Hello! I'm Shantia, a passionate student and developer with experience in Android tinkering and open-source projects. My journey began with curiosity about mobile systems, leading me to Android development.</p>
+      <p>I enjoy coding, exploring new tech, and contributing to open-source when not studying.</p>
     </div>
   </div>
   <div class="section" id="skills">
@@ -236,18 +265,8 @@
     <div class="projects-content">
       <div class="project-card">
         <h3>Telegram Group Checker</h3>
-        <p>A Python GUI tool to check user membership and messages.</p>
-        <a href="https://github.com/ishantia/TGC" target="_blank">View Project</a>
-      </div>
-      <!-- Duplicate for continuous scroll -->
-      <div class="project-card">
-        <h3>Telegram Group Checker</h3>
-        <p>A Python GUI tool to check user membership and messages.</p>
-        <a href="https://github.com/ishantia/TGC" target="_blank">View Project</a>
-      </div>
-      <div class="project-card">
-        <h3>Telegram Group Checker</h3>
-        <p>A Python GUI tool to check user membership and messages.</p>
+        <p>A Python GUI tool to check user membership.</p>
+        <p>Shows latest messages if found.</p>
         <a href="https://github.com/ishantia/TGC" target="_blank">View Project</a>
       </div>
     </div>
@@ -269,5 +288,11 @@
       </div>
     </div>
   </div>
+  <div class="social-buttons">
+    <a href="https://t.me/ishantia" target="_blank"><i class="fab fa-telegram"></i></a>
+    <a href="https://instagram.com/ishantia__" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://github.com/ishantia" target="_blank"><i class="fab fa-github"></i></a>
+  </div>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
 </html>
