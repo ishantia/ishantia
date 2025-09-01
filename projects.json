@@ -12,10 +12,11 @@
     "tags": ["Windows", "Python"]
   },
   {
-  "name": "Test Project1",
-    "description": "A new project will be release ASAP!",
-    "link": "https://example.com",
-    "tags": ["Test", "PlaceHolder"]
+  "name": "WindowsCrash",
+    "description": "About
+This DigiSpark project emulates a USB keyboard to open an elevated Command Prompt and execute a command that forcibly terminates critical Windows processes (svchost.exe), which can crash the system.",
+    "link": "https://github.com/ishantia/WindowsCrash",
+    "tags": ["CMD", "DigiSpark", "Arduino"]
    },
   {
   "name": "Test Project2",
@@ -48,6 +49,7 @@
     "tags": ["Test", "PlaceHolder"]
    }
 ]
+
 
 
 
