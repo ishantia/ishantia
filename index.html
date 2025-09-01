@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ShantiaEslami - Portfolio</title>
+    <title>SaiKrishna - Portfolio</title>
     
     <!-- Preconnect to external domains for faster resource loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -54,14 +55,16 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-content">
-            <h1 data-text="Shantia Eslami">Shantia Eslami</h1>
-            <p class="hero-subtitle">Student/Developer from Iran !!</p>
+            <h1 data-text="Sai Krishna">Sai Krishna</h1>
+            <p class="hero-subtitle">Student/Developer from India !!</p>
             <div class="hero-buttons">
                 <a href="#projects" class="btn btn-primary">View Projects</a>
+                <button class="btn btn-secondary" id="resumeBtn">View Resume</button>
             </div>
             <div class="social-icons">
-                <a href="https://github.com/ishantia" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
-                <a href="https://t.me/ishantia" target="_blank" rel="noopener"><i class="fab fa-telegram"></i></a>
+                <a href="https://github.com/saikrishna1504" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/sai-krishna1504" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://t.me/Saikrishna1504" target="_blank" rel="noopener"><i class="fab fa-telegram"></i></a>
             </div>
         </div>
         
@@ -120,7 +123,7 @@
                         <span class="terminal-btn minimize"></span>
                         <span class="terminal-btn expand"></span>
                     </div>
-                    <div class="terminal-title">shantiaeslami@dev:~</div>
+                    <div class="terminal-title">saikrishna@dev:~</div>
                 </div>
                 <div class="terminal-body">
                     <div class="terminal-line">
@@ -158,16 +161,259 @@
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
                 <div class="about-text glass-card">
-                    <p>I’m Shantia, a student and tech enthusiast passionate about problem-solving and open-source projects</p>
-                    <p>I love experimenting with Android (custom ROMs, root, kernel tweaks) and exploring creative solutions through coding and technology.</p>
-                    <p>Always curious, always learning.</p>
+                    <p>Hello! I'm Sai Krishna, a passionate Android developer and software engineer with experience in custom ROM development, kernel optimization, and application development. I enjoy tackling complex problems and creating efficient, user-friendly solutions.</p>
+                    <p>My journey in tech began with a curiosity about how mobile operating systems work, which led me to explore custom Android development. Since then, I've worked on various projects ranging from device trees to full custom ROMs.</p>
+                    <p>When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or enhancing my skills through continuous learning.</p>
                 </div>
             </div>
         </div>
     </section>
     
     <!-- Skills Section -->
-    <!-- بقیه بخش‌ها مثل Skills, Education (کامنت شده), Projects, Contact و اسکریپت‌ها همون قبلی هستن و فقط بخش رزومه حذف شده -->
+    <section class="skills-section" id="skills">
+        <div class="container">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-container">
+                <div class="skill">
+                    <div class="skill-name">Android Development</div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 90%"></div>
+                    </div>
+                    <div class="skill-percentage">90%</div>
+                </div>
+                <div class="skill">
+                    <div class="skill-name">Git & GitHub</div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 85%"></div>
+                    </div>
+                    <div class="skill-percentage">90%</div>
+                </div>
+                <div class="skill">
+                    <div class="skill-name">Java</div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 85%"></div>
+                    </div>
+                    <div class="skill-percentage">80%</div>
+                </div>
+                <div class="skill">
+                    <div class="skill-name">Kotlin</div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 80%"></div>
+                    </div>
+                    <div class="skill-percentage">60%</div>
+                </div>
+                <div class="skill">
+                    <div class="skill-name">C/C++</div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 75%"></div>
+                    </div>
+                    <div class="skill-percentage">75%</div>
+                </div>
+                <div class="skill">
+                    <div class="skill-name">Python</div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 70%"></div>
+                    </div>
+                    <div class="skill-percentage">70%</div>
+                </div>
+            </div>
+            
+            <h3 class="subsection-title" style="margin-top: 30px;">Tech Stack</h3>
+            <div class="tech-icons">
+                <div class="tech-icon">
+                    <i class="fab fa-android"></i>
+                    <span>Android</span>
+                </div>
+                <div class="tech-icon">
+                    <i class="fab fa-linux"></i>
+                    <span>Linux</span>
+                </div>
+                <div class="tech-icon">
+                    <i class="fab fa-git-alt"></i>
+                    <span>Git</span>
+                </div>
+                <div class="tech-icon">
+                    <i class="fab fa-github"></i>
+                    <span>GitHub</span>
+                </div>
+                <div class="tech-icon">
+                    <i class="fab fa-java"></i>
+                    <span>Java</span>
+                </div>
+                <div class="tech-icon">
+                    <svg class="kotlin-svg-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="2.5rem" height="2.5rem">
+                        <path d="M0,0 L12,12 L0,24 Z" fill="var(--primary-color)"/>
+                        <path d="M0,0 L24,0 L12,12 Z" fill="var(--primary-color)"/>
+                        <path d="M12,12 L24,0 L24,24 Z" fill="var(--primary-color)"/>
+                    </svg>
+                    <span>Kotlin</span>
+                </div>
+                <div class="tech-icon">
+                    <i class="fas fa-code"></i>
+                    <span>C/C++</span>
+                </div>
+                <div class="tech-icon">
+                    <i class="fab fa-python"></i>
+                    <span>Python</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Education Section -->
+    <section class="education-section" id="education">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="education-card">
+                        <h4>Computer Science and Engineering</h4>
+                        <p class="institution">Saveetha University</p>
+                        <p class="years">2022 - 2026</p>
+                        <p class="percentage">CGPA: 8.7/10</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="education-card">
+                        <h4>Intermediate College (MPC)</h4>
+                        <p class="institution">MGM Junior College</p>
+                        <p class="years">2020 - 2022</p>
+                        <p class="percentage">95%</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="education-card">
+                        <h4>Secondary School Education</h4>
+                        <p class="institution">Narayana E.M High School</p>
+                        <p class="years">2019 - 2020</p>
+                        <p class="percentage">98%</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <h2 class="section-title">My Projects</h2>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card" data-category="ROM">
+                    <div class="project-img">
+                        <img src="assets/images/project1.jpg" alt="AxionOS AOSP" width="400" height="225" loading="lazy">
+                    </div>
+                    <div class="project-content">
+                        <h3>AxionOS - Project Manager</h3>
+                        <p>Project Manager and Official Maintainer of AxionOS, an Lineage-based custom ROM. Leading development efforts to deliver a clean, stable, and feature-rich Android experience with focus on performance optimization, battery efficiency, and modern design elements.</p>
+                        <div class="project-tags">
+                            <span>Android</span>
+                            <span>AOSP</span>
+                            <span>Project Management</span>
+                        </div>
+                        <a href="https://axionaosp.github.io/" class="project-link" target="_blank" rel="noopener">
+                            <i class="fab fa-github"></i> View Project
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card" data-category="ROM">
+                    <div class="project-img">
+                        <img src="assets/images/project2.jpg" alt="Device Tree Development" width="400" height="225" loading="lazy">
+                    </div>
+                    <div class="project-content">
+                        <h3>Legacy Device Maintenance - Redmi Note 8 Pro</h3>
+                        <p>Continuing the legacy of Redmi Note 8 Pro (begonia) by bringing the latest Android updates to this 2019 device. Maintaining device trees and ensuring compatibility with modern Android versions, proving that well-maintained older devices can still deliver excellent performance and features.</p>
+                        <div class="project-tags">
+                            <span>Device Trees</span>
+                            <span>Legacy Support</span>
+                            <span>Android 16</span>
+                        </div>
+                        <a href="https://github.com/Saikrishna1504/device_redmi_begonia" class="project-link" target="_blank" rel="noopener">
+                            <i class="fab fa-github"></i> View Source
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card" data-category="Kernel">
+                    <div class="project-img">
+                        <img src="assets/images/project3.jpg" alt="PoWeR Kernel" width="400" height="225" loading="lazy">
+                    </div>
+                    <div class="project-content">
+                        <h3>PoWeR Kernel for Redmi Note 8 Pro</h3>
+                        <p>Custom Linux kernel for Redmi Note 8 Pro with multiple performance-enhancing patches, improved battery life, and optimized thermal management. Thanks to all open source contributors.</p>
+                        <div class="project-tags">
+                            <span>Kernel</span>
+                            <span>C</span>
+                            <span>Linux</span>
+                        </div>
+                        <a href="https://github.com/Saikrishna1504/kernel_xiaomi_mt6785" class="project-link" target="_blank" rel="noopener">
+                            <i class="fab fa-github"></i> View Project
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card" data-category="Web">
+                    <div class="project-img">
+                        <img src="assets/images/project4.png" alt="ROMs Archive" width="400" height="225" loading="lazy">
+                    </div>
+                    <div class="project-content">
+                        <h3>ROMs & Kernels Archive</h3>
+                        <p>A static website that serves as a repository for all my custom ROM and kernel releases. Features clean organization, version tracking, and easy download options for users.</p>
+                        <div class="project-tags">
+                            <span>HTML/CSS</span>
+                            <span>JavaScript</span>
+                            <span>Web Hosting</span>
+                        </div>
+                        <a href="https://saikrishna1504.github.io/roms/" class="project-link" target="_blank" rel="noopener">
+                            <i class="fab fa-github"></i> View Project
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card" data-category="App">
+                    <div class="project-img">
+                        <img src="assets/images/project5.jpeg" alt="Todo App" width="400" height="225" loading="lazy">
+                    </div>
+                    <div class="project-content">
+                        <h3>Kotlin Todo List App</h3>
+                        <p>A clean, minimalist Todo list application developed as a learning project to understand Android development with Kotlin. Features task creation, completion tracking, and priority management.</p>
+                        <div class="project-tags">
+                            <span>Android</span>
+                            <span>Kotlin</span>
+                            <span>MVVM</span>
+                        </div>
+                        <a href="https://github.com/Saikrishna1504/ToDoList" class="project-link" target="_blank" rel="noopener">
+                            <i class="fab fa-github"></i> View Project
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card" data-category="IoT">
+                    <div class="project-img">
+                        <img src="assets/images/project6.jpg" alt="Automatic TollGate System - Top View" width="400" height="225" loading="lazy">
+                    </div>
+                    <div class="project-content">
+                        <h3>Automatic TollGate System</h3>
+                        <p>An innovative IoT project that automates toll gate operations using smart sensors. Built with Arduino Uno, the system features an HC-SR04 ultrasonic sensor for precise vehicle detection within 20cm range and a servo motor for smooth gate operation. Perfect for learning hardware-software integration and real-world automation applications.</p>
+                        <div class="project-tags">
+                            <span>Arduino</span>
+                            <span>IoT</span>
+                            <span>Arduino Hardware</span>
+                        </div>
+                        <a href="https://github.com/Saikrishna1504/Automatic_TollGate" class="project-link" target="_blank" rel="noopener">
+                            <i class="fab fa-github"></i> View Project
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Contact Section -->
     <section class="contact" id="contact">
@@ -181,7 +427,7 @@
                         </div>
                         <div class="contact-text">
                             <h4>Email</h4>
-                            <p><a href="mailto:shantiaeslami@gmail.com">shantiaeslami@gmail.com</a></p>
+                            <p><a href="mailto:saikrishna26918@gmail.com">saikrishna26918@gmail.com</a></p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -190,7 +436,16 @@
                         </div>
                         <div class="contact-text">
                             <h4>GitHub</h4>
-                            <p><a href="https://github.com/ishantia" target="_blank" rel="noopener">@ishantia</a></p>
+                            <p><a href="https://github.com/saikrishna1504" target="_blank" rel="noopener">@saikrishna1504</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>LinkedIn</h4>
+                            <p><a href="https://www.linkedin.com/in/sai-krishna1504" target="_blank" rel="noopener">Sai Krishna</a></p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -199,13 +454,13 @@
                         </div>
                         <div class="contact-text">
                             <h4>Telegram</h4>
-                            <p><a href="https://t.me/ishantia" target="_blank" rel="noopener">@ishantia</a></p>
+                            <p><a href="https://t.me/saikrishna1504" target="_blank" rel="noopener">@saikrishna1504</a></p>
                         </div>
                     </div>
                 </div>
                 
                 <div class="contact-form glass-card">
-                    <form id="contact-form" action="https://formspree.io/f/xldwlwpb" method="POST">
+                    <form id="contact-form" action="https://formspree.io/f/mqapjogg" method="POST">
                         <div class="form-group">
                             <input type="text" id="name" name="name" placeholder="Your Name" required>
                         </div>
@@ -230,12 +485,406 @@
             </div>
         </div>
         <div class="copyright">
-            <p class="copyright-text">&copy; 2025 Shantiaeslami All Rights Reserved.</p>
+            <p class="copyright-text">&copy; 2023 SaiKrishna. All Rights Reserved.</p>
         </div>
     </section>
 
+    <!-- Resume Modal -->
+    <div id="resumeModal" class="resume-modal">
+        <div class="resume-modal-content">
+            <span class="close-resume">&times;</span>
+            <div class="resume-container">
+                <embed src="assets/Saikrishna_Resume.pdf" type="application/pdf" width="100%" height="100%">
+            </div>
+        </div>
+    </div>
+
     <!-- JavaScript for page functionality -->
     <script src="script.js"></script>
-    <!-- بقیه اسکریپت‌ها همون قبلی هستن -->
+    
+    <!-- Navbar functionality and smooth scrolling -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Navbar toggle functionality
+            const navbarToggle = document.getElementById('navbar-toggle');
+            const navbarMenu = document.getElementById('navbar-menu');
+            
+            if (navbarToggle && navbarMenu) {
+                navbarToggle.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    navbarMenu.classList.toggle('active');
+                });
+            }
+            
+            // Smooth scrolling for anchor links
+            const navLinks = document.querySelectorAll('.navbar-menu a, .hero-buttons a');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    // Close mobile menu if open
+                    if (navbarMenu.classList.contains('active')) {
+                        navbarToggle.classList.remove('active');
+                        navbarMenu.classList.remove('active');
+                    }
+                    
+                    const targetId = this.getAttribute('href');
+                    
+                    // Only process anchor links
+                    if (targetId.startsWith('#') && targetId.length > 1) {
+                        e.preventDefault();
+                        
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            // Adjust offset for skills section to show both skills and tech stack
+                            let offsetAdjustment = 80; // Default offset for navbar height
+                            if (targetId === '#skills') {
+                                offsetAdjustment = 100; // Larger offset to show more of the section
+                            }
+                            
+                            // Smooth scroll to target
+                            window.scrollTo({
+                                top: targetElement.offsetTop - offsetAdjustment,
+                                behavior: 'smooth'
+                            });
+                            
+                            // Update active class
+                            navLinks.forEach(navLink => navLink.classList.remove('active'));
+                            this.classList.add('active');
+                        }
+                    }
+                });
+            });
+            
+            // Set active link based on scroll position
+            function setActiveNavLink() {
+                const sections = document.querySelectorAll('section[id]');
+                const scrollPosition = window.scrollY;
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 100;
+                    const sectionHeight = section.offsetHeight;
+                    const sectionId = section.getAttribute('id');
+                    
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === '#' + sectionId) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }
+            
+            window.addEventListener('scroll', setActiveNavLink);
+            // Initial check
+            setActiveNavLink();
+        });
+    </script>
+    
+    <!-- Fallback script to ensure interactive elements work on GitHub Pages -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(function() {
+                const particleField = document.querySelector('.particle-field');
+                if (particleField && (!particleField.children || particleField.children.length === 0)) {
+                    createParticlesFallback(particleField, 25);
+                }
+                
+                const creativeElement = document.querySelector('.creative-element');
+                if (creativeElement && !creativeElement._initialized) {
+                    setupCreativeElementFallback();
+                }
+            }, 500);
+        });
+        
+        function createParticlesFallback(container, count) {
+            if (!container) return;
+            container.innerHTML = '';
+            
+            const colors = [
+                'var(--primary-color)',
+                'var(--secondary-color)',
+                'var(--accent-color)',
+                'rgba(255, 255, 255, 0.7)'
+            ];
+            
+            for (let i = 0; i < count; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.position = 'absolute';
+                
+                const size = Math.random() * 4 + 2;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                
+                particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                particle.style.borderRadius = '50%';
+                particle.style.opacity = Math.random() * 0.6 + 0.2;
+                
+                particle.style.top = `${Math.random() * 100}%`;
+                particle.style.left = `${Math.random() * 100}%`;
+                
+                particle.style.zIndex = Math.floor(Math.random() * 10);
+                
+                particle.style.setProperty('--float-x', (Math.random() * 2 - 1).toFixed(2));
+                particle.style.setProperty('--float-y', (Math.random() * 2 - 1).toFixed(2));
+                particle.style.setProperty('--float-z', (Math.random() * 2 - 1).toFixed(2));
+                particle.style.animation = `float-particle ${Math.random() * 5 + 3}s ease-in-out infinite`;
+                particle.style.animationDelay = `${Math.random() * 2}s`;
+                
+                container.appendChild(particle);
+            }
+        }
+        
+        function setupCreativeElementFallback() {
+            const creativeElement = document.querySelector('.creative-element');
+            const techPlanets = document.querySelectorAll('.tech-planet');
+            const terminal = document.querySelector('.code-terminal');
+            const avatarCircle = document.querySelector('.avatar-circle');
+            const pupils = document.querySelectorAll('.pupil');
+            const techOrbit = document.querySelector('.tech-orbit');
+            
+            if (!creativeElement) return;
+            creativeElement._initialized = true;
+            
+            if (!document.querySelector('.flying-particles-container')) {
+                const flyingParticlesContainer = document.createElement('div');
+                flyingParticlesContainer.className = 'flying-particles-container';
+                document.body.appendChild(flyingParticlesContainer);
+            }
+            
+            if (techOrbit) {
+                techOrbit.addEventListener('mouseenter', function() {
+                    this.style.animationPlayState = 'paused';
+                });
+                
+                techOrbit.addEventListener('mouseleave', function() {
+                    this.style.animationPlayState = 'running';
+                });
+            }
+            
+            const clearActivePlanets = () => {
+                techPlanets.forEach(p => p.classList.remove('active'));
+            };
+            
+            if (techPlanets.length) {
+                techPlanets.forEach(planet => {
+                    planet.addEventListener('mousedown', function(e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        
+                        clearActivePlanets();
+                        this.classList.add('active');
+                        
+                        const techName = this.className.split(' ')[1] || '';
+                        let level = 75;
+                        
+                        if (techName === 'android') level = 90;
+                        else if (techName === 'java') level = 85;
+                        else if (techName === 'kotlin') level = 70;
+                        else if (techName === 'linux') level = 85;
+                        else if (techName === 'github') level = 80;
+                        
+                        const skillMeter = document.querySelector('.skill-meter');
+                        if (skillMeter) {
+                            skillMeter.classList.add('visible');
+                            const fill = skillMeter.querySelector('.skill-meter-fill');
+                            const percentage = skillMeter.querySelector('.skill-meter-percentage');
+                            if (fill && percentage) {
+                                fill.style.width = `${level}%`;
+                                percentage.textContent = `${level}%`;
+                            }
+                        }
+                        
+                        const terminalBody = document.querySelector('.terminal-body');
+                        if (terminalBody) {
+                            const command = document.createElement('div');
+                            command.className = 'terminal-line';
+                            command.innerHTML = `<span class="terminal-prompt">$</span><span class="terminal-text">tech info ${techName}</span>`;
+                            
+                            const response = document.createElement('div');
+                            response.className = 'terminal-line';
+                            
+                            if (techName === 'android') {
+                                response.innerHTML = `<span class="terminal-text">Android development is my primary focus. I create custom ROMs and apps with ${level}% proficiency.</span>`;
+                            } else if (techName === 'java') {
+                                response.innerHTML = `<span class="terminal-text">Java is one of my main programming languages for Android development. ${level}% proficiency.</span>`;
+                            } else if (techName === 'kotlin') {
+                                response.innerHTML = `<span class="terminal-text">I've been learning Kotlin for modern Android app development. Currently at ${level}% proficiency.</span>`;
+                            } else if (techName === 'linux') {
+                                response.innerHTML = `<span class="terminal-text">I'm experienced with Linux for development and customization. ${level}% proficiency.</span>`;
+                            } else if (techName === 'github') {
+                                response.innerHTML = `<span class="terminal-text">Check out my projects on GitHub: github.com/saikrishna1504 (${level}% proficiency with Git/GitHub)</span>`;
+                            } else {
+                                response.innerHTML = `<span class="terminal-text">Selected ${techName} technology.</span>`;
+                            }
+                            
+                            const lines = terminalBody.querySelectorAll('.terminal-line');
+                            if (lines.length > 4) {
+                                terminalBody.removeChild(lines[0]);
+                                if (lines.length > 5) terminalBody.removeChild(lines[1]);
+                            }
+                            
+                            terminalBody.appendChild(command);
+                            setTimeout(() => {
+                                terminalBody.appendChild(response);
+                                terminalBody.scrollTop = terminalBody.scrollHeight;
+                            }, 300);
+                        }
+                    });
+                    
+                    planet.addEventListener('mouseenter', function() {
+                        document.body.style.cursor = 'pointer';
+                        if (techOrbit) techOrbit.style.animationPlayState = 'paused';
+                    });
+                    
+                    planet.addEventListener('mouseleave', function() {
+                        document.body.style.cursor = 'default';
+                        if (techOrbit && !document.querySelector('.tech-planet:hover')) {
+                            techOrbit.style.animationPlayState = 'running';
+                        }
+                    });
+                });
+                
+                document.addEventListener('click', function(e) {
+                    if (!e.target.closest('.tech-planet')) {
+                        clearActivePlanets();
+                        const skillMeter = document.querySelector('.skill-meter');
+                        if (skillMeter) skillMeter.classList.remove('visible');
+                    }
+                });
+            }
+            
+            let isMouseMoving = false;
+            let mouseX = 0, mouseY = 0;
+            let rafId = null;
+            
+            document.addEventListener('mousemove', function(e) {
+                mouseX = e.clientX / window.innerWidth - 0.5;
+                mouseY = e.clientY / window.innerHeight - 0.5;
+                isMouseMoving = true;
+                
+                if (pupils.length && avatarCircle) {
+                    const avatarRect = avatarCircle.getBoundingClientRect();
+                    const avatarCenterX = avatarRect.left + avatarRect.width / 2;
+                    const avatarCenterY = avatarRect.top + avatarRect.height / 2;
+                    
+                    const dx = e.clientX - avatarCenterX;
+                    const dy = e.clientY - avatarCenterY;
+                    
+                    pupils.forEach(pupil => {
+                        const moveX = Math.min(Math.max(dx / 200, -3), 3);
+                        const moveY = Math.min(Math.max(dy / 200, -2), 2);
+                        pupil.style.transform = `translate(${moveX}px, ${moveY}px)`;
+                    });
+                }
+                
+                if (!rafId) {
+                    rafId = requestAnimationFrame(updateAnimation);
+                }
+            }, { passive: true });
+            
+            function updateAnimation() {
+                if (isMouseMoving && creativeElement) {
+                    creativeElement.style.transform = `perspective(1500px) rotateY(${mouseX * 6}deg) rotateX(${-mouseY * 4}deg)`;
+                    isMouseMoving = false;
+                }
+                rafId = null;
+            }
+            
+            let blinkTimer = null;
+            let isBlinking = false;
+            
+            function startBlinking() {
+                if (blinkTimer) clearInterval(blinkTimer);
+                
+                blinkTimer = setInterval(() => {
+                    if (isBlinking || document.querySelector('.tech-planet:hover') || document.querySelector('.tech-planet.active')) {
+                        return;
+                    }
+                    
+                    isBlinking = true;
+                    const avatarEyes = document.querySelectorAll('.avatar-eye');
+                    
+                    if (avatarEyes.length) {
+                        avatarEyes.forEach(eye => {
+                            eye.style.height = '1px';
+                            eye.style.transition = 'height 0.1s ease';
+                        });
+                        
+                        setTimeout(() => {
+                            avatarEyes.forEach(eye => {
+                                eye.style.height = '12px';
+                                eye.style.transition = 'height 0.2s ease';
+                            });
+                            isBlinking = false;
+                        }, 150);
+                    } else {
+                        isBlinking = false;
+                    }
+                }, Math.random() * 5000 + 5000);
+            }
+            
+            function stopBlinking() {
+                const avatarEyes = document.querySelectorAll('.avatar-eye');
+                if (avatarEyes.length) {
+                    avatarEyes.forEach(eye => {
+                        eye.style.height = '12px';
+                        eye.style.transition = 'height 0.2s ease';
+                    });
+                }
+                isBlinking = false;
+            }
+            
+            startBlinking();
+        }
+    </script>
+    
+    <!-- Image Modal -->
+    <div id="imageModal" class="image-modal">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="modalImage" alt="Enlarged project image">
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const resumeModal = document.getElementById('resumeModal');
+        const resumeBtn = document.getElementById('resumeBtn');
+        const closeResumeBtn = document.querySelector('.close-resume');
+
+        // Open resume modal
+        resumeBtn.addEventListener('click', function() {
+            resumeModal.style.display = 'block';
+            setTimeout(() => {
+                resumeModal.classList.add('show');
+            }, 10);
+        });
+
+        // Close resume modal
+        function closeResumeModal() {
+            resumeModal.classList.remove('show');
+            setTimeout(() => {
+                resumeModal.style.display = 'none';
+            }, 300);
+        }
+
+        closeResumeBtn.addEventListener('click', closeResumeModal);
+
+        // Close modal when clicking outside
+        window.addEventListener('click', function(e) {
+            if (e.target === resumeModal) {
+                closeResumeModal();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && resumeModal.style.display === 'block') {
+                closeResumeModal();
+            }
+        });
+    });
+    </script>
 </body>
 </html>
