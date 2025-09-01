@@ -19,8 +19,8 @@
         :root {
             --primary-color: #00ffcc;
             --secondary-color: #ff00ff;
-            --accent-color: #ffcc00;
-            --background-color: #1a1a2e;
+            --accent-color: linear-gradient(45deg, #00ffcc, #ff00ff);
+            --background-color: #2e2e3a;
             --text-color: #e0e0e0;
             --white: #00ffff;
         }
@@ -33,9 +33,10 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: var(--background-color);
+            background: #2e2e3a;
             color: var(--text-color);
             line-height: 1.6;
+            min-height: 100vh;
         }
 
         /* Loader */
@@ -45,7 +46,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: var(--primary-color);
+            background: #2e2e3a;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -62,9 +63,13 @@
             width: 80px;
             height: 80px;
             border: 4px solid var(--white);
-            border-top-color: var(--accent-color);
+            border-top-color: var(--secondary-color);
             border-radius: 50%;
             animation: spin 1s linear infinite;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .loader-counter {
@@ -72,6 +77,7 @@
             color: var(--white);
             font-size: 1rem;
             font-weight: 500;
+            text-align: center;
         }
 
         @keyframes spin {
@@ -116,6 +122,7 @@
         .navbar-menu a:hover,
         .navbar-menu a.active {
             color: var(--primary-color);
+            transform: scale(1.1);
         }
 
         .navbar-toggle {
@@ -154,10 +161,12 @@
             color: var(--text-color);
             font-size: 1rem;
             cursor: pointer;
+            transition: color 0.3s;
         }
 
         .language-btn:hover {
             color: var(--primary-color);
+            transform: scale(1.1);
         }
 
         @media (max-width: 768px) {
@@ -215,7 +224,7 @@
         .hero-subtitle {
             font-size: 1.1rem;
             margin-bottom: 1.5rem;
-            color: var(--accent-color);
+            color: var(--secondary-color);
         }
 
         .hero-buttons .btn {
@@ -224,17 +233,14 @@
             text-decoration: none;
             border-radius: 5px;
             font-weight: 500;
-            transition: background 0.3s, color 0.3s;
-        }
-
-        .btn-primary {
-            background: var(--primary-color);
+            transition: background 0.3s, color 0.3s, transform 0.3s;
+            background: linear-gradient(45deg, #00ffcc, #ff00ff);
             color: var(--background-color);
         }
 
-        .btn-primary:hover {
-            background: #00b3a3;
-            color: var(--white);
+        .hero-buttons .btn:hover {
+            background: linear-gradient(45deg, #00b3a3, #cc00cc);
+            transform: scale(1.1);
         }
 
         .social-icons {
@@ -245,11 +251,12 @@
             color: var(--text-color);
             font-size: 1.5rem;
             margin: 0 0.5rem;
-            transition: color 0.3s;
+            transition: color 0.3s, transform 0.3s;
         }
 
         .social-icons a:hover {
             color: var(--primary-color);
+            transform: scale(1.2);
             text-shadow: 0 0 5px var(--primary-color);
         }
 
@@ -269,26 +276,30 @@
         .avatar-circle {
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, #00ffcc, #ffcc00);
+            background: linear-gradient(135deg, #00ffcc, #ff00ff);
             border-radius: 50%;
             position: relative;
             overflow: hidden;
             box-shadow: 0 0 20px rgba(0, 255, 204, 0.5);
-        }
-
-        .avatar-face {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 80%;
-            height: 80%;
             display: flex;
             justify-content: center;
             align-items: center;
+            transition: transform 0.3s;
+        }
+
+        .avatar-circle:hover {
+            transform: scale(1.1);
+        }
+
+        .avatar-face {
             font-size: 3rem;
             color: #ffeb3b;
             text-shadow: 0 0 10px #ffeb3b;
+            transition: transform 0.3s;
+        }
+
+        .avatar-circle:hover .avatar-face {
+            transform: scale(1.2);
         }
 
         .code-terminal {
@@ -350,13 +361,14 @@
             height: 8px;
             border-radius: 4px;
             overflow: hidden;
+            margin-top: 0.5rem;
         }
 
         .skill-meter-fill {
-            background: var(--primary-color);
+            background: linear-gradient(45deg, #00ffcc, #ff00ff);
             height: 100%;
             width: 0;
-            transition: width 0.5s ease-in-out;
+            transition: width 1.5s ease-in-out;
         }
 
         .skill-meter-percentage {
@@ -411,12 +423,14 @@
             height: 8px;
             border-radius: 4px;
             overflow: hidden;
+            margin-top: 0.5rem;
         }
 
         .skill-progress {
-            background: var(--primary-color);
+            background: linear-gradient(45deg, #00ffcc, #ff00ff);
             height: 100%;
-            transition: width 1s ease-in-out;
+            width: 0;
+            transition: width 1.5s ease-in-out;
         }
 
         .tech-icons {
@@ -430,6 +444,12 @@
         .tech-icon {
             text-align: center;
             font-size: 2rem;
+            transition: transform 0.3s, color 0.3s;
+        }
+
+        .tech-icon:hover {
+            transform: scale(1.2);
+            color: var(--primary-color);
         }
 
         .tech-icon span {
@@ -484,9 +504,12 @@
             color: var(--primary-color);
             text-decoration: none;
             font-weight: 500;
+            transition: color 0.3s, transform 0.3s;
         }
 
         .project-link:hover {
+            color: var(--secondary-color);
+            transform: scale(1.1);
             text-decoration: underline;
         }
 
@@ -511,15 +534,22 @@
             font-size: 1.5rem;
             margin-right: 1rem;
             color: var(--primary-color);
+            transition: transform 0.3s;
+        }
+
+        .contact-item:hover .contact-icon {
+            transform: scale(1.2);
         }
 
         .contact-text a {
             color: var(--text-color);
             text-decoration: none;
+            transition: color 0.3s, transform 0.3s;
         }
 
         .contact-text a:hover {
             color: var(--primary-color);
+            transform: scale(1.1);
         }
 
         .contact-form input,
@@ -545,16 +575,16 @@
             text-decoration: none;
             border-radius: 5px;
             font-weight: 500;
-            transition: background 0.3s, color 0.3s;
-            background: var(--primary-color);
+            transition: background 0.3s, color 0.3s, transform 0.3s;
+            background: linear-gradient(45deg, #00ffcc, #ff00ff);
             color: var(--background-color);
             border: none;
             cursor: pointer;
         }
 
         .submit-btn:hover {
-            background: #00b3a3;
-            color: var(--white);
+            background: linear-gradient(45deg, #00b3a3, #cc00cc);
+            transform: scale(1.1);
         }
 
         .success-alert {
@@ -603,6 +633,11 @@
             font-size: 2rem;
             color: var(--white);
             cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .close-modal:hover {
+            transform: scale(1.2);
         }
 
         @media (max-width: 768px) {
@@ -738,42 +773,42 @@
                 <div class="skill">
                     <div class="skill-name">Android Development</div>
                     <div class="skill-bar">
-                        <div class="skill-progress" style="width: 20%"></div>
+                        <div class="skill-progress" data-width="20%"></div>
                     </div>
                     <div class="skill-percentage">20%</div>
                 </div>
                 <div class="skill">
                     <div class="skill-name">Git & GitHub</div>
                     <div class="skill-bar">
-                        <div class="skill-progress" style="width: 60%"></div>
+                        <div class="skill-progress" data-width="60%"></div>
                     </div>
                     <div class="skill-percentage">60%</div>
                 </div>
                 <div class="skill">
                     <div class="skill-name">Java</div>
                     <div class="skill-bar">
-                        <div class="skill-progress" style="width: 95%"></div>
+                        <div class="skill-progress" data-width="95%"></div>
                     </div>
                     <div class="skill-percentage">95%</div>
                 </div>
                 <div class="skill">
                     <div class="skill-name">Python</div>
                     <div class="skill-bar">
-                        <div class="skill-progress" style="width: 99%"></div>
+                        <div class="skill-progress" data-width="99%"></div>
                     </div>
                     <div class="skill-percentage">99%</div>
                 </div>
                 <div class="skill">
                     <div class="skill-name">C/C++</div>
                     <div class="skill-bar">
-                        <div class="skill-progress" style="width: 75%"></div>
+                        <div class="skill-progress" data-width="75%"></div>
                     </div>
                     <div class="skill-percentage">75%</div>
                 </div>
                 <div class="skill">
                     <div class="skill-name">C#</div>
                     <div class="skill-bar">
-                        <div class="skill-progress" style="width: 45%"></div>
+                        <div class="skill-progress" data-width="45%"></div>
                     </div>
                     <div class="skill-percentage">45%</div>
                 </div>
@@ -809,36 +844,8 @@
     <section class="projects" id="projects">
         <div class="container">
             <h2 class="section-title">My Projects</h2>
-            <div class="projects-grid">
-                <!-- Project 1 -->
-                <div class="project-card" data-category="TOOL">
-                    <div class="project-content">
-                        <h3>TGC</h3>
-                        <p>A powerful Python GUI tool to check user membership and recent messages in Telegram groups. Requires Telegram API credentials and login. Multi-language, dark/light themes, and session management included.</p>
-                        <div class="project-tags">
-                            <span>Windows</span>
-                            <span>Python</span>
-                            <span>Project Management</span>
-                        </div>
-                        <a href="https://github.com/ishantia/TGC" class="project-link" target="_blank" rel="noopener" aria-label="View TGC project on GitHub">
-                            <i class="fab fa-github"></i> View Project
-                        </a>
-                    </div>
-                </div>
-                <!-- Project 2 (Lorem Ipsum) -->
-                <div class="project-card" data-category="TEST">
-                    <div class="project-content">
-                        <h3>Lorem Ipsum</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-                        <div class="project-tags">
-                            <span>Test</span>
-                            <span>Placeholder</span>
-                        </div>
-                        <a href="#" class="project-link" aria-label="View Lorem Ipsum project">
-                            <i class="fas fa-eye"></i> View Project
-                        </a>
-                    </div>
-                </div>
+            <div class="projects-grid" id="projects-grid">
+                <!-- Projects will be loaded dynamically here -->
             </div>
         </div>
     </section>
@@ -918,7 +925,11 @@
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <script type="text/javascript">
         function googleTranslateElementInit() {
-            new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'fa,ar,en,de,hi',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
         }
 
         function toggleTranslateMenu() {
@@ -1016,16 +1027,60 @@
                 });
             }
 
-            // Interactive skill meter (since orbit is removed)
-            const skillMeter = document.querySelector('.skill-meter');
-            const skillMeterFill = document.querySelector('.skill-meter-fill');
-            const skillMeterPercentage = document.querySelector('.skill-meter-percentage');
+            // Interactive emoji
+            const avatarFace = document.querySelector('.avatar-face');
+            const emojis = ['😊', '😂', '😎', '👍', '😄', '🤓'];
+            let currentEmoji = 0;
 
-            if (skillMeter && skillMeterFill && skillMeterPercentage) {
-                skillMeter.classList.add('visible');
-                skillMeterFill.style.width = '75%';
-                skillMeterPercentage.textContent = '75%';
+            function changeEmoji() {
+                currentEmoji = (currentEmoji + 1) % emojis.length;
+                avatarFace.textContent = emojis[currentEmoji];
             }
+
+            setInterval(changeEmoji, 3000);
+
+            avatarFace.addEventListener('mouseover', () => {
+                const randomIndex = Math.floor(Math.random() * emojis.length);
+                avatarFace.textContent = emojis[randomIndex];
+            });
+
+            avatarFace.addEventListener('mouseout', () => {
+                changeEmoji();
+            });
+
+            // Skill progress animation
+            const skillProgressBars = document.querySelectorAll('.skill-progress');
+            skillProgressBars.forEach(bar => {
+                const width = bar.getAttribute('data-width');
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 500); // Delay to allow page load
+            });
+
+            // Load projects from JSON
+            const projectsGrid = document.getElementById('projects-grid');
+            fetch('projects.json')
+                .then(response => response.json())
+                .then(data => {
+                    data.forEach(project => {
+                        const projectCard = document.createElement('div');
+                        projectCard.className = 'project-card';
+                        projectCard.innerHTML = `
+                            <div class="project-content">
+                                <h3>${project.name}</h3>
+                                <p>${project.description}</p>
+                                <div class="project-tags">
+                                    ${project.tags.map(tag => `<span>${tag}</span>`).join('')}
+                                </div>
+                                <a href="${project.link}" class="project-link" target="_blank" rel="noopener" aria-label="View ${project.name} project">
+                                    <i class="fab fa-github"></i> View Project
+                                </a>
+                            </div>
+                        `;
+                        projectsGrid.appendChild(projectCard);
+                    });
+                })
+                .catch(error => console.error('Error loading projects:', error));
 
             // Form submission
             const contactForm = document.getElementById('contact-form');
