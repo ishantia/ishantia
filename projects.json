@@ -13,8 +13,7 @@
   },
   {
   "name": "WindowsCrash",
-    "description": "About
-This DigiSpark project emulates a USB keyboard to open an elevated Command Prompt and execute a command that forcibly terminates critical Windows processes (svchost.exe), which can crash the system.",
+    "description": "An DigSpark project that can open CMD with admin rights and taskkil svchost.exe(causing Windows pc to crash.)",
     "link": "https://github.com/ishantia/WindowsCrash",
     "tags": ["CMD", "DigiSpark", "Arduino"]
    },
@@ -49,6 +48,7 @@ This DigiSpark project emulates a USB keyboard to open an elevated Command Promp
     "tags": ["Test", "PlaceHolder"]
    }
 ]
+
 
 
 
