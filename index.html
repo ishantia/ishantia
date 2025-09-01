@@ -1,20 +1,700 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SaiKrishna - Portfolio</title>
+    <title>Shantia Eslami - Portfolio</title>
     
     <!-- Preconnect to external domains for faster resource loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     
-    <!-- Critical CSS first -->
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Font Awesome and Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Embedded Styles -->
+    <style>
+        :root {
+            --primary-color: #007bff;
+            --secondary-color: #6c757d;
+            --accent-color: #28a745;
+            --background-color: #f8f9fa;
+            --text-color: #333;
+            --white: #fff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* Loader */
+        .loader-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--primary-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s;
+        }
+
+        .loader-wrapper.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .loader-circle {
+            width: 100px;
+            height: 100px;
+            border: 5px solid var(--white);
+            border-top-color: var(--accent-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        .loader-counter {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: var(--white);
+            font-size: 1.2rem;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .navbar-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+        }
+
+        .navbar-menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .navbar-menu li {
+            margin: 0 1rem;
+        }
+
+        .navbar-menu a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .navbar-menu a:hover,
+        .navbar-menu a.active {
+            color: var(--primary-color);
+        }
+
+        .navbar-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .navbar-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--text-color);
+            margin: 2px 0;
+            transition: all 0.3s;
+        }
+
+        @media (max-width: 768px) {
+            .navbar-menu {
+                display: none;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background: var(--white);
+                flex-direction: column;
+                padding: 1rem;
+            }
+
+            .navbar-menu.active {
+                display: flex;
+            }
+
+            .navbar-toggle {
+                display: flex;
+            }
+
+            .navbar-toggle.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+
+            .navbar-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .navbar-toggle.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -7px);
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .hero-buttons .btn {
+            padding: 0.8rem 1.5rem;
+            margin: 0.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: background 0.3s;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: #0056b3;
+        }
+
+        .btn-secondary {
+            background: var(--secondary-color);
+            color: var(--white);
+        }
+
+        .btn-secondary:hover {
+            background: #5a6268;
+        }
+
+        .social-icons a {
+            color: var(--text-color);
+            font-size: 1.5rem;
+            margin: 0 0.5rem;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Creative Element */
+        .creative-element {
+            position: relative;
+            margin-top: 2rem;
+        }
+
+        .floating-avatar {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            margin: 0 auto;
+        }
+
+        .avatar-circle {
+            width: 100%;
+            height: 100%;
+            background: var(--primary-color);
+            border-radius: 50%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .avatar-face {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            height: 80%;
+        }
+
+        .avatar-eye {
+            position: absolute;
+            width: 20px;
+            height: 12px;
+            background: var(--white);
+            border-radius: 50%;
+            top: 30%;
+        }
+
+        .avatar-eye.left {
+            left: 20%;
+        }
+
+        .avatar-eye.right {
+            right: 20%;
+        }
+
+        .pupil {
+            width: 8px;
+            height: 8px;
+            background: var(--text-color);
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .avatar-smile {
+            position: absolute;
+            bottom: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 10px;
+            background: transparent;
+            border: 2px solid var(--text-color);
+            border-top: none;
+            border-radius: 0 0 50% 50%;
+        }
+
+        .tech-orbit {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: rotate 20s linear infinite;
+        }
+
+        .tech-planet {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background: var(--secondary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        .tech-planet.active {
+            background: var(--accent-color);
+        }
+
+        .tech-planet.android { transform: rotate(0deg) translateX(100px); }
+        .tech-planet.java { transform: rotate(72deg) translateX(100px); }
+        .tech-planet.kotlin { transform: rotate(144deg) translateX(100px); }
+        .tech-planet.linux { transform: rotate(216deg) translateX(100px); }
+        .tech-planet.github { transform: rotate(288deg) translateX(100px); }
+
+        .tech-tooltip {
+            position: absolute;
+            background: var(--text-color);
+            color: var(--white);
+            padding: 0.3rem 0.6rem;
+            border-radius: 3px;
+            font-size: 0.8rem;
+            top: -30px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .tech-planet:hover .tech-tooltip {
+            opacity: 1;
+        }
+
+        @keyframes rotate {
+            to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        .code-terminal {
+            background: #1a1a1a;
+            color: #fff;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-top: 2rem;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .terminal-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .terminal-buttons span {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 5px;
+        }
+
+        .terminal-btn.close { background: #ff5f56; }
+        .terminal-btn.minimize { background: #ffbd2e; }
+        .terminal-btn.expand { background: #27c93f; }
+
+        .terminal-title {
+            margin-left: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .terminal-line {
+            margin: 0.3rem 0;
+        }
+
+        .terminal-prompt {
+            color: var(--accent-color);
+            margin-right: 0.5rem;
+        }
+
+        .skill-meter {
+            margin-top: 1rem;
+            text-align: center;
+        }
+
+        .skill-meter-bar {
+            background: #ddd;
+            height: 10px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .skill-meter-fill {
+            background: var(--primary-color);
+            height: 100%;
+            width: 0;
+            transition: width 0.5s;
+        }
+
+        .skill-meter-percentage {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        /* About Section */
+        .about {
+            padding: 4rem 1rem;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Skills Section */
+        .skills-section {
+            padding: 4rem 1rem;
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .skill {
+            text-align: center;
+        }
+
+        .skill-bar {
+            background: #ddd;
+            height: 10px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            background: var(--primary-color);
+            height: 100%;
+            transition: width 1s ease-in-out;
+        }
+
+        .tech-icons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .tech-icon {
+            text-align: center;
+            font-size: 2.5rem;
+        }
+
+        .tech-icon span {
+            display: block;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Projects Section */
+        .projects {
+            padding: 4rem 1rem;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-img img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project-content {
+            padding: 1rem;
+        }
+
+        .project-tags {
+            margin: 0.5rem 0;
+        }
+
+        .project-tags span {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 0.3rem 0.6rem;
+            border-radius: 3px;
+            margin-right: 0.5rem;
+            font-size: 0.8rem;
+        }
+
+        .project-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .project-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 4rem 1rem;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            color: var(--primary-color);
+        }
+
+        .contact-text a {
+            color: var(--text-color);
+            text-decoration: none;
+        }
+
+        .contact-text a:hover {
+            color: var(--primary-color);
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .contact-form textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .success-alert {
+            display: none;
+            background: var(--accent-color);
+            color: var(--white);
+            padding: 1rem;
+            border-radius: 5px;
+            margin-top: 1rem;
+        }
+
+        .success-alert.show {
+            display: block;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+        }
+
+        /* Resume Modal */
+        .resume-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .resume-modal.show {
+            display: flex;
+            opacity: 1;
+        }
+
+        .resume-content {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            max-width: 600px;
+            width: 90%;
+            position: relative;
+        }
+
+        .close-resume {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Image Modal */
+        .image-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image-modal img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2rem;
+            color: var(--white);
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Loading Animation -->
@@ -24,19 +704,15 @@
                 <div class="loader-counter">0%</div>
             </div>
         </div>
-        <div class="scatter-particles" id="scatter-particles"></div>
     </div>
 
-    <!-- Starry Background -->
-    <div class="stars-container"></div>
-    
     <!-- Navbar -->
     <nav class="navbar">
         <div class="navbar-container">
-            <a href="#" class="logo">
-                <img src="assets/images/pfp.jpg" alt="Logo" width="42" height="42" style="border-radius: 50%; object-fit: cover;" loading="lazy">
+            <a href="#" class="logo" aria-label="Shantia Eslami's Portfolio">
+                <img src="assets/images/pfp.jpg" alt="Shantia Eslami's profile picture" width="42" height="42" style="border-radius: 50%; object-fit: cover;" loading="lazy">
             </a>              
-            <div class="navbar-toggle" id="navbar-toggle">
+            <div class="navbar-toggle" id="navbar-toggle" role="button" aria-label="Toggle navigation menu">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -45,7 +721,6 @@
                 <li><a href="#home" class="active">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
-                <li><a href="#education">Education</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -55,16 +730,15 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-content">
-            <h1 data-text="Sai Krishna">Sai Krishna</h1>
-            <p class="hero-subtitle">Student/Developer from India !!</p>
+            <h1>Shantia Eslami</h1>
+            <p class="hero-subtitle">Student/Developer from Iran</p>
             <div class="hero-buttons">
                 <a href="#projects" class="btn btn-primary">View Projects</a>
-                <button class="btn btn-secondary" id="resumeBtn">View Resume</button>
+                <button class="btn btn-secondary" id="resumeBtn" aria-label="View resume">View Resume</button>
             </div>
             <div class="social-icons">
-                <a href="https://github.com/saikrishna1504" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/sai-krishna1504" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://t.me/Saikrishna1504" target="_blank" rel="noopener"><i class="fab fa-telegram"></i></a>
+                <a href="https://github.com/ishantia" target="_blank" rel="noopener" aria-label="GitHub profile"><i class="fab fa-github"></i></a>
+                <a href="https://t.me/ishantia" target="_blank" rel="noopener" aria-label="Telegram profile"><i class="fab fa-telegram"></i></a>
             </div>
         </div>
         
@@ -82,9 +756,6 @@
                             </div>
                         </div>
                         <div class="avatar-smile"></div>
-                    </div>
-                    <div class="avatar-code-badge">
-                        <span>&lt;/&gt;</span>
                     </div>
                 </div>
                 <div class="tech-orbit">
@@ -109,12 +780,6 @@
                         <div class="tech-tooltip">GitHub</div>
                     </div>
                 </div>
-                <div class="avatar-rings">
-                    <div class="avatar-ring ring1"></div>
-                    <div class="avatar-ring ring2"></div>
-                    <div class="avatar-ring ring3"></div>
-                </div>
-                <div class="particle-field"></div>
             </div>
             <div class="code-terminal">
                 <div class="terminal-header">
@@ -123,20 +788,17 @@
                         <span class="terminal-btn minimize"></span>
                         <span class="terminal-btn expand"></span>
                     </div>
-                    <div class="terminal-title">saikrishna@dev:~</div>
+                    <div class="terminal-title">shantiaeslami@dev:~</div>
                 </div>
                 <div class="terminal-body">
                     <div class="terminal-line">
                         <span class="terminal-prompt">$</span>
-                        <span class="terminal-text typing-text">Welcome to my portfolio!</span>
+                        <span class="terminal-text">Welcome to my portfolio!</span>
                     </div>
                     <div class="terminal-line">
                         <span class="terminal-prompt">$</span>
-                        <span class="terminal-text waiting-cursor">Interact with the tech planets to learn more...</span>
+                        <span class="terminal-text">Interact with the tech planets...</span>
                     </div>
-                </div>
-                <div class="terminal-interaction-hint">
-                    Click on elements to interact!
                 </div>
             </div>
             <div class="skill-meter">
@@ -147,12 +809,6 @@
                 </div>
             </div>
         </div>
-        
-        <div class="floating-shapes">
-            <div class="floating-shape shape1"></div>
-            <div class="floating-shape shape2"></div>
-            <div class="floating-shape shape3"></div>
-        </div>
     </section>
 
     <!-- About Section -->
@@ -161,9 +817,9 @@
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
                 <div class="about-text glass-card">
-                    <p>Hello! I'm Sai Krishna, a passionate Android developer and software engineer with experience in custom ROM development, kernel optimization, and application development. I enjoy tackling complex problems and creating efficient, user-friendly solutions.</p>
-                    <p>My journey in tech began with a curiosity about how mobile operating systems work, which led me to explore custom Android development. Since then, I've worked on various projects ranging from device trees to full custom ROMs.</p>
-                    <p>When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or enhancing my skills through continuous learning.</p>
+                    <p>I’m Shantia, a student and tech enthusiast passionate about problem-solving and open-source projects.</p>
+                    <p>I love experimenting with Android (custom ROMs, root, kernel tweaks) and exploring creative solutions through coding and technology.</p>
+                    <p>Always curious, always learning.</p>
                 </div>
             </div>
         </div>
@@ -177,30 +833,30 @@
                 <div class="skill">
                     <div class="skill-name">Android Development</div>
                     <div class="skill-bar">
-                        <div class="skill-progress" style="width: 90%"></div>
+                        <div class="skill-progress" style="width: 20%"></div>
                     </div>
-                    <div class="skill-percentage">90%</div>
+                    <div class="skill-percentage">20%</div>
                 </div>
                 <div class="skill">
                     <div class="skill-name">Git & GitHub</div>
                     <div class="skill-bar">
-                        <div class="skill-progress" style="width: 85%"></div>
+                        <div class="skill-progress" style="width: 60%"></div>
                     </div>
-                    <div class="skill-percentage">90%</div>
+                    <div class="skill-percentage">60%</div>
                 </div>
                 <div class="skill">
                     <div class="skill-name">Java</div>
                     <div class="skill-bar">
-                        <div class="skill-progress" style="width: 85%"></div>
+                        <div class="skill-progress" style="width: 95%"></div>
                     </div>
-                    <div class="skill-percentage">80%</div>
+                    <div class="skill-percentage">95%</div>
                 </div>
                 <div class="skill">
-                    <div class="skill-name">Kotlin</div>
+                    <div class="skill-name">Python</div>
                     <div class="skill-bar">
-                        <div class="skill-progress" style="width: 80%"></div>
+                        <div class="skill-progress" style="width: 99%"></div>
                     </div>
-                    <div class="skill-percentage">60%</div>
+                    <div class="skill-percentage">99%</div>
                 </div>
                 <div class="skill">
                     <div class="skill-name">C/C++</div>
@@ -210,11 +866,11 @@
                     <div class="skill-percentage">75%</div>
                 </div>
                 <div class="skill">
-                    <div class="skill-name">Python</div>
+                    <div class="skill-name">C#</div>
                     <div class="skill-bar">
-                        <div class="skill-progress" style="width: 70%"></div>
+                        <div class="skill-progress" style="width: 45%"></div>
                     </div>
-                    <div class="skill-percentage">70%</div>
+                    <div class="skill-percentage">45%</div>
                 </div>
             </div>
             
@@ -260,153 +916,43 @@
         </div>
     </section>
     
-    <!-- Education Section -->
-    <section class="education-section" id="education">
-        <div class="container">
-            <h2 class="section-title">Education</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="education-card">
-                        <h4>Computer Science and Engineering</h4>
-                        <p class="institution">Saveetha University</p>
-                        <p class="years">2022 - 2026</p>
-                        <p class="percentage">CGPA: 8.7/10</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="education-card">
-                        <h4>Intermediate College (MPC)</h4>
-                        <p class="institution">MGM Junior College</p>
-                        <p class="years">2020 - 2022</p>
-                        <p class="percentage">95%</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="education-card">
-                        <h4>Secondary School Education</h4>
-                        <p class="institution">Narayana E.M High School</p>
-                        <p class="years">2019 - 2020</p>
-                        <p class="percentage">98%</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Projects Section -->
     <section class="projects" id="projects">
         <div class="container">
             <h2 class="section-title">My Projects</h2>
             <div class="projects-grid">
                 <!-- Project 1 -->
-                <div class="project-card" data-category="ROM">
+                <div class="project-card" data-category="TOOL">
                     <div class="project-img">
-                        <img src="assets/images/project1.jpg" alt="AxionOS AOSP" width="400" height="225" loading="lazy">
+                        <img src="assets/images/project1.jpg" alt="TGC project screenshot" width="400" height="225" loading="lazy">
                     </div>
                     <div class="project-content">
-                        <h3>AxionOS - Project Manager</h3>
-                        <p>Project Manager and Official Maintainer of AxionOS, an Lineage-based custom ROM. Leading development efforts to deliver a clean, stable, and feature-rich Android experience with focus on performance optimization, battery efficiency, and modern design elements.</p>
+                        <h3>TGC</h3>
+                        <p>A powerful Python GUI tool to check user membership and recent messages in Telegram groups. Requires Telegram API credentials and login. Multi-language, dark/light themes, and session management included.</p>
                         <div class="project-tags">
-                            <span>Android</span>
-                            <span>AOSP</span>
+                            <span>Windows</span>
+                            <span>Python</span>
                             <span>Project Management</span>
                         </div>
-                        <a href="https://axionaosp.github.io/" class="project-link" target="_blank" rel="noopener">
+                        <a href="https://github.com/ishantia/TGC" class="project-link" target="_blank" rel="noopener" aria-label="View TGC project on GitHub">
                             <i class="fab fa-github"></i> View Project
                         </a>
                     </div>
                 </div>
-
-                <!-- Project 2 -->
-                <div class="project-card" data-category="ROM">
+                <!-- Project 2 (Sample) -->
+                <div class="project-card" data-category="APP">
                     <div class="project-img">
-                        <img src="assets/images/project2.jpg" alt="Device Tree Development" width="400" height="225" loading="lazy">
+                        <img src="assets/images/project2.jpg" alt="Sample Android App screenshot" width="400" height="225" loading="lazy">
                     </div>
                     <div class="project-content">
-                        <h3>Legacy Device Maintenance - Redmi Note 8 Pro</h3>
-                        <p>Continuing the legacy of Redmi Note 8 Pro (begonia) by bringing the latest Android updates to this 2019 device. Maintaining device trees and ensuring compatibility with modern Android versions, proving that well-maintained older devices can still deliver excellent performance and features.</p>
-                        <div class="project-tags">
-                            <span>Device Trees</span>
-                            <span>Legacy Support</span>
-                            <span>Android 16</span>
-                        </div>
-                        <a href="https://github.com/Saikrishna1504/device_redmi_begonia" class="project-link" target="_blank" rel="noopener">
-                            <i class="fab fa-github"></i> View Source
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Project 3 -->
-                <div class="project-card" data-category="Kernel">
-                    <div class="project-img">
-                        <img src="assets/images/project3.jpg" alt="PoWeR Kernel" width="400" height="225" loading="lazy">
-                    </div>
-                    <div class="project-content">
-                        <h3>PoWeR Kernel for Redmi Note 8 Pro</h3>
-                        <p>Custom Linux kernel for Redmi Note 8 Pro with multiple performance-enhancing patches, improved battery life, and optimized thermal management. Thanks to all open source contributors.</p>
-                        <div class="project-tags">
-                            <span>Kernel</span>
-                            <span>C</span>
-                            <span>Linux</span>
-                        </div>
-                        <a href="https://github.com/Saikrishna1504/kernel_xiaomi_mt6785" class="project-link" target="_blank" rel="noopener">
-                            <i class="fab fa-github"></i> View Project
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Project 4 -->
-                <div class="project-card" data-category="Web">
-                    <div class="project-img">
-                        <img src="assets/images/project4.png" alt="ROMs Archive" width="400" height="225" loading="lazy">
-                    </div>
-                    <div class="project-content">
-                        <h3>ROMs & Kernels Archive</h3>
-                        <p>A static website that serves as a repository for all my custom ROM and kernel releases. Features clean organization, version tracking, and easy download options for users.</p>
-                        <div class="project-tags">
-                            <span>HTML/CSS</span>
-                            <span>JavaScript</span>
-                            <span>Web Hosting</span>
-                        </div>
-                        <a href="https://saikrishna1504.github.io/roms/" class="project-link" target="_blank" rel="noopener">
-                            <i class="fab fa-github"></i> View Project
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Project 5 -->
-                <div class="project-card" data-category="App">
-                    <div class="project-img">
-                        <img src="assets/images/project5.jpeg" alt="Todo App" width="400" height="225" loading="lazy">
-                    </div>
-                    <div class="project-content">
-                        <h3>Kotlin Todo List App</h3>
-                        <p>A clean, minimalist Todo list application developed as a learning project to understand Android development with Kotlin. Features task creation, completion tracking, and priority management.</p>
+                        <h3>Sample Android App</h3>
+                        <p>An Android application built with Kotlin for task management, featuring a clean UI and local database integration.</p>
                         <div class="project-tags">
                             <span>Android</span>
                             <span>Kotlin</span>
-                            <span>MVVM</span>
+                            <span>Mobile</span>
                         </div>
-                        <a href="https://github.com/Saikrishna1504/ToDoList" class="project-link" target="_blank" rel="noopener">
-                            <i class="fab fa-github"></i> View Project
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Project 5 -->
-                <div class="project-card" data-category="IoT">
-                    <div class="project-img">
-                        <img src="assets/images/project6.jpg" alt="Automatic TollGate System - Top View" width="400" height="225" loading="lazy">
-                    </div>
-                    <div class="project-content">
-                        <h3>Automatic TollGate System</h3>
-                        <p>An innovative IoT project that automates toll gate operations using smart sensors. Built with Arduino Uno, the system features an HC-SR04 ultrasonic sensor for precise vehicle detection within 20cm range and a servo motor for smooth gate operation. Perfect for learning hardware-software integration and real-world automation applications.</p>
-                        <div class="project-tags">
-                            <span>Arduino</span>
-                            <span>IoT</span>
-                            <span>Arduino Hardware</span>
-                        </div>
-                        <a href="https://github.com/Saikrishna1504/Automatic_TollGate" class="project-link" target="_blank" rel="noopener">
+                        <a href="https://github.com/ishantia/sample-app" class="project-link" target="_blank" rel="noopener" aria-label="View Sample Android App on GitHub">
                             <i class="fab fa-github"></i> View Project
                         </a>
                     </div>
@@ -427,7 +973,7 @@
                         </div>
                         <div class="contact-text">
                             <h4>Email</h4>
-                            <p><a href="mailto:saikrishna26918@gmail.com">saikrishna26918@gmail.com</a></p>
+                            <p><a href="mailto:shantiaeslami@gmail.com">shantiaeslami@gmail.com</a></p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -436,16 +982,7 @@
                         </div>
                         <div class="contact-text">
                             <h4>GitHub</h4>
-                            <p><a href="https://github.com/saikrishna1504" target="_blank" rel="noopener">@saikrishna1504</a></p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fab fa-linkedin-in"></i>
-                        </div>
-                        <div class="contact-text">
-                            <h4>LinkedIn</h4>
-                            <p><a href="https://www.linkedin.com/in/sai-krishna1504" target="_blank" rel="noopener">Sai Krishna</a></p>
+                            <p><a href="https://github.com/ishantia" target="_blank" rel="noopener">@ishantia</a></p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -454,26 +991,26 @@
                         </div>
                         <div class="contact-text">
                             <h4>Telegram</h4>
-                            <p><a href="https://t.me/saikrishna1504" target="_blank" rel="noopener">@saikrishna1504</a></p>
+                            <p><a href="https://t.me/ishantia" target="_blank" rel="noopener">@ishantia</a></p>
                         </div>
                     </div>
                 </div>
                 
                 <div class="contact-form glass-card">
-                    <form id="contact-form" action="https://formspree.io/f/mqapjogg" method="POST">
+                    <form id="contact-form" action="https://formspree.io/f/xldwlwpb" method="POST">
                         <div class="form-group">
-                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                            <input type="text" id="name" name="name" placeholder="Your Name" required aria-label="Your name">
                         </div>
                         <div class="form-group">
-                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                            <input type="email" id="email" name="email" placeholder="Your Email" required aria-label="Your email">
                         </div>
                         <div class="form-group">
-                            <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                            <input type="text" id="subject" name="subject" placeholder="Subject" required aria-label="Subject">
                         </div>
                         <div class="form-group">
-                            <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                            <textarea id="message" name="message" placeholder="Your Message" required aria-label="Your message"></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary submit-btn">
+                        <button type="submit" class="btn btn-primary submit-btn" aria-label="Send message">
                             <span id="loading-spinner"></span>
                             <span id="submit-text">Send Message</span>
                         </button>
@@ -485,86 +1022,81 @@
             </div>
         </div>
         <div class="copyright">
-            <p class="copyright-text">&copy; 2023 SaiKrishna. All Rights Reserved.</p>
+            <p class="copyright-text">&copy; 2025 Shantia Eslami All Rights Reserved.</p>
         </div>
     </section>
 
     <!-- Resume Modal -->
     <div id="resumeModal" class="resume-modal">
-        <div class="resume-modal-content">
-            <span class="close-resume">&times;</span>
-            <div class="resume-container">
-                <embed src="assets/Saikrishna_Resume.pdf" type="application/pdf" width="100%" height="100%">
-            </div>
+        <div class="resume-content">
+            <span class="close-resume" aria-label="Close resume modal">&times;</span>
+            <h2>Resume</h2>
+            <p>Download or view my resume below:</p>
+            <a href="assets/resume.pdf" class="btn btn-primary" target="_blank" rel="noopener" aria-label="Download resume">Download Resume (PDF)</a>
         </div>
     </div>
 
-    <!-- JavaScript for page functionality -->
-    <script src="script.js"></script>
-    
-    <!-- Navbar functionality and smooth scrolling -->
+    <!-- Image Modal -->
+    <div id="imageModal" class="image-modal">
+        <span class="close-modal" aria-label="Close image modal">&times;</span>
+        <img class="modal-content" id="modalImage" alt="Enlarged project image">
+    </div>
+
+    <!-- JavaScript -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Navbar toggle functionality
+            // Hide loader after page load
+            const loader = document.querySelector('.loader-wrapper');
+            if (loader) {
+                setTimeout(() => {
+                    loader.classList.add('hidden');
+                }, 1000);
+            }
+
+            // Navbar toggle
             const navbarToggle = document.getElementById('navbar-toggle');
             const navbarMenu = document.getElementById('navbar-menu');
-            
             if (navbarToggle && navbarMenu) {
-                navbarToggle.addEventListener('click', function() {
-                    this.classList.toggle('active');
+                navbarToggle.addEventListener('click', () => {
+                    navbarToggle.classList.toggle('active');
                     navbarMenu.classList.toggle('active');
                 });
             }
-            
-            // Smooth scrolling for anchor links
+
+            // Smooth scrolling
             const navLinks = document.querySelectorAll('.navbar-menu a, .hero-buttons a');
-            
             navLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
-                    // Close mobile menu if open
                     if (navbarMenu.classList.contains('active')) {
                         navbarToggle.classList.remove('active');
                         navbarMenu.classList.remove('active');
                     }
-                    
+
                     const targetId = this.getAttribute('href');
-                    
-                    // Only process anchor links
                     if (targetId.startsWith('#') && targetId.length > 1) {
                         e.preventDefault();
-                        
                         const targetElement = document.querySelector(targetId);
                         if (targetElement) {
-                            // Adjust offset for skills section to show both skills and tech stack
-                            let offsetAdjustment = 80; // Default offset for navbar height
-                            if (targetId === '#skills') {
-                                offsetAdjustment = 100; // Larger offset to show more of the section
-                            }
-                            
-                            // Smooth scroll to target
+                            const offset = targetId === '#skills' ? 100 : 80;
                             window.scrollTo({
-                                top: targetElement.offsetTop - offsetAdjustment,
+                                top: targetElement.offsetTop - offset,
                                 behavior: 'smooth'
                             });
-                            
-                            // Update active class
                             navLinks.forEach(navLink => navLink.classList.remove('active'));
                             this.classList.add('active');
                         }
                     }
                 });
             });
-            
-            // Set active link based on scroll position
+
+            // Active nav link on scroll
             function setActiveNavLink() {
                 const sections = document.querySelectorAll('section[id]');
                 const scrollPosition = window.scrollY;
-                
                 sections.forEach(section => {
                     const sectionTop = section.offsetTop - 100;
                     const sectionHeight = section.offsetHeight;
                     const sectionId = section.getAttribute('id');
-                    
                     if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
                         navLinks.forEach(link => {
                             link.classList.remove('active');
@@ -575,244 +1107,201 @@
                     }
                 });
             }
-            
             window.addEventListener('scroll', setActiveNavLink);
-            // Initial check
             setActiveNavLink();
-        });
-    </script>
-    
-    <!-- Fallback script to ensure interactive elements work on GitHub Pages -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            setTimeout(function() {
-                const particleField = document.querySelector('.particle-field');
-                if (particleField && (!particleField.children || particleField.children.length === 0)) {
-                    createParticlesFallback(particleField, 25);
+
+            // Resume modal
+            const resumeModal = document.getElementById('resumeModal');
+            const resumeBtn = document.getElementById('resumeBtn');
+            const closeResumeBtn = document.querySelector('.close-resume');
+            if (resumeBtn && resumeModal && closeResumeBtn) {
+                resumeBtn.addEventListener('click', () => {
+                    resumeModal.style.display = 'flex';
+                    setTimeout(() => resumeModal.classList.add('show'), 10);
+                });
+
+                function closeResumeModal() {
+                    resumeModal.classList.remove('show');
+                    setTimeout(() => resumeModal.style.display = 'none', 300);
                 }
-                
-                const creativeElement = document.querySelector('.creative-element');
-                if (creativeElement && !creativeElement._initialized) {
-                    setupCreativeElementFallback();
-                }
-            }, 500);
-        });
-        
-        function createParticlesFallback(container, count) {
-            if (!container) return;
-            container.innerHTML = '';
-            
-            const colors = [
-                'var(--primary-color)',
-                'var(--secondary-color)',
-                'var(--accent-color)',
-                'rgba(255, 255, 255, 0.7)'
-            ];
-            
-            for (let i = 0; i < count; i++) {
-                const particle = document.createElement('div');
-                particle.className = 'particle';
-                particle.style.position = 'absolute';
-                
-                const size = Math.random() * 4 + 2;
-                particle.style.width = `${size}px`;
-                particle.style.height = `${size}px`;
-                
-                particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-                particle.style.borderRadius = '50%';
-                particle.style.opacity = Math.random() * 0.6 + 0.2;
-                
-                particle.style.top = `${Math.random() * 100}%`;
-                particle.style.left = `${Math.random() * 100}%`;
-                
-                particle.style.zIndex = Math.floor(Math.random() * 10);
-                
-                particle.style.setProperty('--float-x', (Math.random() * 2 - 1).toFixed(2));
-                particle.style.setProperty('--float-y', (Math.random() * 2 - 1).toFixed(2));
-                particle.style.setProperty('--float-z', (Math.random() * 2 - 1).toFixed(2));
-                particle.style.animation = `float-particle ${Math.random() * 5 + 3}s ease-in-out infinite`;
-                particle.style.animationDelay = `${Math.random() * 2}s`;
-                
-                container.appendChild(particle);
+
+                closeResumeBtn.addEventListener('click', closeResumeModal);
+                window.addEventListener('click', e => {
+                    if (e.target === resumeModal) closeResumeModal();
+                });
+                document.addEventListener('keydown', e => {
+                    if (e.key === 'Escape' && resumeModal.style.display === 'flex') closeResumeModal();
+                });
             }
-        }
-        
-        function setupCreativeElementFallback() {
-            const creativeElement = document.querySelector('.creative-element');
+
+            // Image modal
+            const imageModal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            const closeModal = document.querySelector('.close-modal');
+            const projectImages = document.querySelectorAll('.project-img img');
+            if (imageModal && modalImage && closeModal) {
+                projectImages.forEach(img => {
+                    img.addEventListener('click', () => {
+                        modalImage.src = img.src;
+                        modalImage.alt = img.alt;
+                        imageModal.style.display = 'flex';
+                    });
+                });
+
+                closeModal.addEventListener('click', () => {
+                    imageModal.style.display = 'none';
+                });
+
+                window.addEventListener('click', e => {
+                    if (e.target === imageModal) imageModal.style.display = 'none';
+                });
+            }
+
+            // Interactive tech planets
             const techPlanets = document.querySelectorAll('.tech-planet');
-            const terminal = document.querySelector('.code-terminal');
-            const avatarCircle = document.querySelector('.avatar-circle');
-            const pupils = document.querySelectorAll('.pupil');
+            const terminalBody = document.querySelector('.terminal-body');
+            const skillMeter = document.querySelector('.skill-meter');
+            const skillMeterFill = document.querySelector('.skill-meter-fill');
+            const skillMeterPercentage = document.querySelector('.skill-meter-percentage');
             const techOrbit = document.querySelector('.tech-orbit');
-            
-            if (!creativeElement) return;
-            creativeElement._initialized = true;
-            
-            if (!document.querySelector('.flying-particles-container')) {
-                const flyingParticlesContainer = document.createElement('div');
-                flyingParticlesContainer.className = 'flying-particles-container';
-                document.body.appendChild(flyingParticlesContainer);
-            }
-            
+            const pupils = document.querySelectorAll('.pupil');
+            const avatarCircle = document.querySelector('.avatar-circle');
+
             if (techOrbit) {
-                techOrbit.addEventListener('mouseenter', function() {
-                    this.style.animationPlayState = 'paused';
-                });
-                
-                techOrbit.addEventListener('mouseleave', function() {
-                    this.style.animationPlayState = 'running';
-                });
+                techOrbit.addEventListener('mouseenter', () => techOrbit.style.animationPlayState = 'paused');
+                techOrbit.addEventListener('mouseleave', () => techOrbit.style.animationPlayState = 'running');
             }
-            
-            const clearActivePlanets = () => {
-                techPlanets.forEach(p => p.classList.remove('active'));
-            };
-            
-            if (techPlanets.length) {
-                techPlanets.forEach(planet => {
-                    planet.addEventListener('mousedown', function(e) {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        
-                        clearActivePlanets();
-                        this.classList.add('active');
-                        
-                        const techName = this.className.split(' ')[1] || '';
-                        let level = 75;
-                        
-                        if (techName === 'android') level = 90;
-                        else if (techName === 'java') level = 85;
-                        else if (techName === 'kotlin') level = 70;
-                        else if (techName === 'linux') level = 85;
-                        else if (techName === 'github') level = 80;
-                        
-                        const skillMeter = document.querySelector('.skill-meter');
-                        if (skillMeter) {
-                            skillMeter.classList.add('visible');
-                            const fill = skillMeter.querySelector('.skill-meter-fill');
-                            const percentage = skillMeter.querySelector('.skill-meter-percentage');
-                            if (fill && percentage) {
-                                fill.style.width = `${level}%`;
-                                percentage.textContent = `${level}%`;
-                            }
+
+            const clearActivePlanets = () => techPlanets.forEach(p => p.classList.remove('active'));
+
+            techPlanets.forEach(planet => {
+                planet.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    clearActivePlanets();
+                    this.classList.add('active');
+
+                    const techName = this.className.split(' ')[1] || '';
+                    let level = 75;
+                    let message = `Selected ${techName} technology.`;
+
+                    if (techName === 'android') {
+                        level = 90;
+                        message = `Android development is my primary focus. I create custom ROMs and apps with ${level}% proficiency.`;
+                    } else if (techName === 'java') {
+                        level = 85;
+                        message = `Java is one of my main programming languages for Android development. ${level}% proficiency.`;
+                    } else if (techName === 'kotlin') {
+                        level = 70;
+                        message = `I've been learning Kotlin for modern Android app development. Currently at ${level}% proficiency.`;
+                    } else if (techName === 'linux') {
+                        level = 85;
+                        message = `I'm experienced with Linux for development and customization. ${level}% proficiency.`;
+                    } else if (techName === 'github') {
+                        level = 80;
+                        message = `Check out my projects on GitHub: github.com/shantiaeslami (${level}% proficiency with Git/GitHub).`;
+                    }
+
+                    if (skillMeter && skillMeterFill && skillMeterPercentage) {
+                        skillMeter.classList.add('visible');
+                        skillMeterFill.style.width = `${level}%`;
+                        skillMeterPercentage.textContent = `${level}%`;
+                    }
+
+                    if (terminalBody) {
+                        const command = document.createElement('div');
+                        command.className = 'terminal-line';
+                        command.innerHTML = `<span class="terminal-prompt">$</span><span class="terminal-text">tech info ${techName}</span>`;
+
+                        const response = document.createElement('div');
+                        response.className = 'terminal-line';
+                        response.innerHTML = `<span class="terminal-text">${message}</span>`;
+
+                        const lines = terminalBody.querySelectorAll('.terminal-line');
+                        if (lines.length > 4) {
+                            terminalBody.removeChild(lines[0]);
+                            if (lines.length > 5) terminalBody.removeChild(lines[1]);
                         }
-                        
-                        const terminalBody = document.querySelector('.terminal-body');
-                        if (terminalBody) {
-                            const command = document.createElement('div');
-                            command.className = 'terminal-line';
-                            command.innerHTML = `<span class="terminal-prompt">$</span><span class="terminal-text">tech info ${techName}</span>`;
-                            
-                            const response = document.createElement('div');
-                            response.className = 'terminal-line';
-                            
-                            if (techName === 'android') {
-                                response.innerHTML = `<span class="terminal-text">Android development is my primary focus. I create custom ROMs and apps with ${level}% proficiency.</span>`;
-                            } else if (techName === 'java') {
-                                response.innerHTML = `<span class="terminal-text">Java is one of my main programming languages for Android development. ${level}% proficiency.</span>`;
-                            } else if (techName === 'kotlin') {
-                                response.innerHTML = `<span class="terminal-text">I've been learning Kotlin for modern Android app development. Currently at ${level}% proficiency.</span>`;
-                            } else if (techName === 'linux') {
-                                response.innerHTML = `<span class="terminal-text">I'm experienced with Linux for development and customization. ${level}% proficiency.</span>`;
-                            } else if (techName === 'github') {
-                                response.innerHTML = `<span class="terminal-text">Check out my projects on GitHub: github.com/saikrishna1504 (${level}% proficiency with Git/GitHub)</span>`;
-                            } else {
-                                response.innerHTML = `<span class="terminal-text">Selected ${techName} technology.</span>`;
-                            }
-                            
-                            const lines = terminalBody.querySelectorAll('.terminal-line');
-                            if (lines.length > 4) {
-                                terminalBody.removeChild(lines[0]);
-                                if (lines.length > 5) terminalBody.removeChild(lines[1]);
-                            }
-                            
-                            terminalBody.appendChild(command);
-                            setTimeout(() => {
-                                terminalBody.appendChild(response);
-                                terminalBody.scrollTop = terminalBody.scrollHeight;
-                            }, 300);
-                        }
-                    });
-                    
-                    planet.addEventListener('mouseenter', function() {
-                        document.body.style.cursor = 'pointer';
-                        if (techOrbit) techOrbit.style.animationPlayState = 'paused';
-                    });
-                    
-                    planet.addEventListener('mouseleave', function() {
-                        document.body.style.cursor = 'default';
-                        if (techOrbit && !document.querySelector('.tech-planet:hover')) {
-                            techOrbit.style.animationPlayState = 'running';
-                        }
-                    });
-                });
-                
-                document.addEventListener('click', function(e) {
-                    if (!e.target.closest('.tech-planet')) {
-                        clearActivePlanets();
-                        const skillMeter = document.querySelector('.skill-meter');
-                        if (skillMeter) skillMeter.classList.remove('visible');
+
+                        terminalBody.appendChild(command);
+                        setTimeout(() => {
+                            terminalBody.appendChild(response);
+                            terminalBody.scrollTop = terminalBody.scrollHeight;
+                        }, 300);
                     }
                 });
-            }
-            
+
+                planet.addEventListener('mouseenter', () => {
+                    document.body.style.cursor = 'pointer';
+                    if (techOrbit) techOrbit.style.animationPlayState = 'paused';
+                });
+
+                planet.addEventListener('mouseleave', () => {
+                    document.body.style.cursor = 'default';
+                    if (techOrbit && !document.querySelector('.tech-planet:hover')) {
+                        techOrbit.style.animationPlayState = 'running';
+                    }
+                });
+            });
+
+            document.addEventListener('click', e => {
+                if (!e.target.closest('.tech-planet') && skillMeter) {
+                    skillMeter.classList.remove('visible');
+                    clearActivePlanets();
+                }
+            });
+
+            // Avatar eye movement
             let isMouseMoving = false;
             let mouseX = 0, mouseY = 0;
             let rafId = null;
-            
-            document.addEventListener('mousemove', function(e) {
+
+            document.addEventListener('mousemove', e => {
                 mouseX = e.clientX / window.innerWidth - 0.5;
                 mouseY = e.clientY / window.innerHeight - 0.5;
                 isMouseMoving = true;
-                
+
                 if (pupils.length && avatarCircle) {
                     const avatarRect = avatarCircle.getBoundingClientRect();
                     const avatarCenterX = avatarRect.left + avatarRect.width / 2;
                     const avatarCenterY = avatarRect.top + avatarRect.height / 2;
-                    
+
                     const dx = e.clientX - avatarCenterX;
                     const dy = e.clientY - avatarCenterY;
-                    
+
                     pupils.forEach(pupil => {
                         const moveX = Math.min(Math.max(dx / 200, -3), 3);
                         const moveY = Math.min(Math.max(dy / 200, -2), 2);
                         pupil.style.transform = `translate(${moveX}px, ${moveY}px)`;
                     });
                 }
-                
+
                 if (!rafId) {
-                    rafId = requestAnimationFrame(updateAnimation);
+                    rafId = requestAnimationFrame(() => {
+                        if (isMouseMoving && document.querySelector('.creative-element')) {
+                            document.querySelector('.creative-element').style.transform = `perspective(1500px) rotateY(${mouseX * 6}deg) rotateX(${-mouseY * 4}deg)`;
+                            isMouseMoving = false;
+                        }
+                        rafId = null;
+                    });
                 }
             }, { passive: true });
-            
-            function updateAnimation() {
-                if (isMouseMoving && creativeElement) {
-                    creativeElement.style.transform = `perspective(1500px) rotateY(${mouseX * 6}deg) rotateX(${-mouseY * 4}deg)`;
-                    isMouseMoving = false;
-                }
-                rafId = null;
-            }
-            
+
+            // Avatar blinking
             let blinkTimer = null;
             let isBlinking = false;
-            
+
             function startBlinking() {
                 if (blinkTimer) clearInterval(blinkTimer);
-                
                 blinkTimer = setInterval(() => {
-                    if (isBlinking || document.querySelector('.tech-planet:hover') || document.querySelector('.tech-planet.active')) {
-                        return;
-                    }
-                    
+                    if (isBlinking || document.querySelector('.tech-planet:hover') || document.querySelector('.tech-planet.active')) return;
                     isBlinking = true;
                     const avatarEyes = document.querySelectorAll('.avatar-eye');
-                    
                     if (avatarEyes.length) {
                         avatarEyes.forEach(eye => {
                             eye.style.height = '1px';
                             eye.style.transition = 'height 0.1s ease';
                         });
-                        
                         setTimeout(() => {
                             avatarEyes.forEach(eye => {
                                 eye.style.height = '12px';
@@ -825,66 +1314,43 @@
                     }
                 }, Math.random() * 5000 + 5000);
             }
-            
-            function stopBlinking() {
-                const avatarEyes = document.querySelectorAll('.avatar-eye');
-                if (avatarEyes.length) {
-                    avatarEyes.forEach(eye => {
-                        eye.style.height = '12px';
-                        eye.style.transition = 'height 0.2s ease';
-                    });
-                }
-                isBlinking = false;
-            }
-            
+
             startBlinking();
-        }
-    </script>
-    
-    <!-- Image Modal -->
-    <div id="imageModal" class="image-modal">
-        <span class="close-modal">&times;</span>
-        <img class="modal-content" id="modalImage" alt="Enlarged project image">
-    </div>
 
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const resumeModal = document.getElementById('resumeModal');
-        const resumeBtn = document.getElementById('resumeBtn');
-        const closeResumeBtn = document.querySelector('.close-resume');
+            // Form submission
+            const contactForm = document.getElementById('contact-form');
+            const messageAlert = document.getElementById('message-alert');
+            if (contactForm && messageAlert) {
+                contactForm.addEventListener('submit', async e => {
+                    e.preventDefault();
+                    const submitBtn = contactForm.querySelector('.submit-btn');
+                    const submitText = document.getElementById('submit-text');
+                    submitBtn.disabled = true;
+                    submitText.textContent = 'Sending...';
 
-        // Open resume modal
-        resumeBtn.addEventListener('click', function() {
-            resumeModal.style.display = 'block';
-            setTimeout(() => {
-                resumeModal.classList.add('show');
-            }, 10);
-        });
+                    try {
+                        const response = await fetch(contactForm.action, {
+                            method: 'POST',
+                            body: new FormData(contactForm),
+                            headers: { 'Accept': 'application/json' }
+                        });
 
-        // Close resume modal
-        function closeResumeModal() {
-            resumeModal.classList.remove('show');
-            setTimeout(() => {
-                resumeModal.style.display = 'none';
-            }, 300);
-        }
-
-        closeResumeBtn.addEventListener('click', closeResumeModal);
-
-        // Close modal when clicking outside
-        window.addEventListener('click', function(e) {
-            if (e.target === resumeModal) {
-                closeResumeModal();
+                        if (response.ok) {
+                            messageAlert.classList.add('show');
+                            contactForm.reset();
+                            setTimeout(() => messageAlert.classList.remove('show'), 3000);
+                        } else {
+                            alert('Failed to send message. Please try again.');
+                        }
+                    } catch (error) {
+                        alert('An error occurred. Please try again.');
+                    } finally {
+                        submitBtn.disabled = false;
+                        submitText.textContent = 'Send Message';
+                    }
+                });
             }
         });
-
-        // Close modal with Escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && resumeModal.style.display === 'block') {
-                closeResumeModal();
-            }
-        });
-    });
     </script>
 </body>
 </html>
