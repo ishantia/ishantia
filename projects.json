@@ -1,0 +1,14 @@
+[
+  {
+    "name": "TGC",
+    "description": "A powerful Python GUI tool to check user membership and recent messages in Telegram groups.",
+    "link": "https://github.com/ishantia/TGC",
+    "tags": ["Windows", "Python", "Project Management"]
+  },
+  {
+    "name": "Lorem Ipsum",
+    "description": "A test project with placeholder content.",
+    "link": "#",
+    "tags": ["Test", "Placeholder"]
+  }
+]
