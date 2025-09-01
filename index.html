@@ -3,116 +3,271 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shantia - GitHub Portfolio</title>
+  <title>Shantia - Portfolio</title>
   <style>
     body {
-      font-family: 'Arial', sans-serif;
       margin: 0;
       padding: 0;
-      background: #0a0a0a;
+      background: #0a0f2b;
       color: #fff;
+      font-family: 'Arial', sans-serif;
       overflow-x: hidden;
     }
     .header {
       text-align: center;
-      padding: 20px;
-      background: #1a1a1a;
-      animation: fadeIn 2s ease-in;
+      padding: 50px 20px;
+      background: linear-gradient(135deg, #1a1f3d, #2a2f5d);
+      animation: fadeIn 1.5s ease-in-out;
     }
-    .header h1 {
+    .nav {
+      margin-top: 20px;
+    }
+    .nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 1.1em;
+      transition: color 0.3s;
+    }
+    .nav a:hover {
+      color: #3498db;
+    }
+    .hero {
+      text-align: center;
+      padding: 50px 20px;
+      position: relative;
+    }
+    .hero h1 {
+      font-size: 3.5em;
       margin: 0;
-      font-size: 2.5em;
+      background: linear-gradient(90deg, #8e44ad, #3498db);
+      -webkit-background-clip: text;
+      color: transparent;
+      animation: glow 2s infinite alternate;
     }
-    .projects {
-      display: flex;
-      flex-wrap: nowrap;
-      overflow-x: auto;
+    .hero p {
+      font-size: 1.2em;
+      color: #bdc3c7;
+    }
+    .hero-buttons a {
+      display: inline-block;
+      padding: 10px 20px;
+      margin: 10px;
+      background: #3498db;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+    .hero-buttons a:hover {
+      background: #2980b9;
+    }
+    .section {
+      padding: 50px 20px;
+      text-align: center;
+    }
+    .section h2 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      position: relative;
+    }
+    .section h2::after {
+      content: '';
+      width: 50px;
+      height: 3px;
+      background: #e74c3c;
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .about-content, .skills-content, .projects-content, .contact-content {
+      max-width: 800px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.1);
       padding: 20px;
-      gap: 20px;
+      border-radius: 10px;
+    }
+    .skills-content .skill-bar {
+      margin: 15px 0;
+      text-align: left;
+    }
+    .skills-content .skill-bar span {
+      display: block;
+      font-size: 1em;
+      margin-bottom: 5px;
+    }
+    .skills-content .skill-bar .progress {
+      height: 10px;
+      background: #34495e;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    .skills-content .skill-bar .progress .fill {
+      height: 100%;
+      background: #3498db;
+      animation: fillAnimation 2s ease-in-out;
+    }
+    .projects-content {
+      overflow-x: auto;
+      white-space: nowrap;
+      padding: 20px 0;
     }
     .project-card {
-      min-width: 300px;
-      background: #2a2a2a;
-      padding: 15px;
+      display: inline-block;
+      width: 200px;
+      margin: 0 15px;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 10px;
       border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-      animation: slideIn 15s infinite linear;
+      animation: scroll 15s linear infinite;
     }
-    .project-card h3 {
-      margin: 0 0 10px 0;
-      font-size: 1.2em;
+    .contact-content form {
+      display: flex;
+      flex-direction: column;
+      max-width: 400px;
+      margin: 0 auto;
     }
-    .project-card p {
-      margin: 0;
-      font-size: 0.9em;
-      color: #ccc;
+    .contact-content form input, .contact-content form textarea {
+      margin: 10px 0;
+      padding: 10px;
+      background: #2c3e50;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
     }
-    .project-card a {
-      color: #1e90ff;
-      text-decoration: none;
+    .contact-content form button {
+      padding: 10px;
+      background: #3498db;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      cursor: pointer;
     }
-    .project-card a:hover {
-      text-decoration: underline;
+    .contact-content form button:hover {
+      background: #2980b9;
     }
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
     }
-    @keyframes slideIn {
+    @keyframes glow {
+      from { text-shadow: 0 0 5px #8e44ad; }
+      to { text-shadow: 0 0 20px #3498db; }
+    }
+    @keyframes fillAnimation {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+    @keyframes scroll {
       0% { transform: translateX(100%); }
       100% { transform: translateX(-100%); }
     }
-    /* Ensure smooth scrolling behavior */
-    .projects {
-      -webkit-overflow-scrolling: touch;
+    .background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: -1;
     }
-    /* Hide scrollbar for better look */
-    .projects::-webkit-scrollbar {
-      display: none;
+    .background span {
+      position: absolute;
+      background: #4a90e2; /* رنگ متفاوت برای دایره‌ها */
+      border-radius: 50%;
+      animation: float 15s infinite;
+    }
+    @keyframes float {
+      0% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-20px) scale(1.2); }
+      100% { transform: translateY(0) scale(1); }
     }
   </style>
 </head>
 <body>
+  <div class="background">
+    <script>
+      for (let i = 0; i < 20; i++) {
+        const span = document.createElement('span');
+        span.style.left = Math.random() * 100 + 'vw';
+        span.style.top = Math.random() * 100 + 'vh';
+        span.style.width = Math.random() * 50 + 20 + 'px';
+        span.style.height = span.style.width;
+        span.style.animationDelay = Math.random() * 5 + 's';
+        document.querySelector('.background').appendChild(span);
+      }
+    </script>
+  </div>
   <div class="header">
-    <h1>Shantia - GitHub Portfolio</h1>
-    <p>Welcome to my GitHub Projects Showcase!</p>
-  </div>
-  <div class="projects">
-    <div class="project-card">
-      <h3>Telegram Group Checker</h3>
-      <p>A Python GUI tool to check user membership and messages in Telegram groups. <a href="https://github.com/ishantia/TGC" target="_blank">View on GitHub</a></p>
-    </div>
-    <!-- Add more project cards as needed based on your repositories -->
-    <div class="project-card">
-      <h3>Custom Android Mods</h3>
-      <p>Personal experiments with Android custom ROMs and scripts. <a href="https://github.com/ishantia?tab=repositories&q=android" target="_blank">Explore Repos</a></p>
-    </div>
-    <div class="project-card">
-      <h3>Open-Source Utilities</h3>
-      <p>Various utilities and experiments shared on GitHub. <a href="https://github.com/ishantia?tab=repositories" target="_blank">See All</a></p>
-    </div>
-    <!-- Duplicate cards for continuous effect -->
-    <div class="project-card">
-      <h3>Telegram Group Checker</h3>
-      <p>A Python GUI tool to check user membership and messages in Telegram groups. <a href="https://github.com/ishantia/TGC" target="_blank">View on GitHub</a></p>
-    </div>
-    <div class="project-card">
-      <h3>Custom Android Mods</h3>
-      <p>Personal experiments with Android custom ROMs and scripts. <a href="https://github.com/ishantia?tab=repositories&q=android" target="_blank">Explore Repos</a></p>
-    </div>
-    <div class="project-card">
-      <h3>Open-Source Utilities</h3>
-      <p>Various utilities and experiments shared on GitHub. <a href="https://github.com/ishantia?tab=repositories" target="_blank">See All</a></p>
+    <div class="nav">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
     </div>
   </div>
-  <script>
-    // Ensure continuous animation by cloning elements
-    const projects = document.querySelector('.projects');
-    const cards = document.querySelectorAll('.project-card');
-    cards.forEach(card => {
-      const clone = card.cloneNode(true);
-      projects.appendChild(clone);
-    });
-  </script>
+  <div class="hero" id="home">
+    <h1>Shantia</h1>
+    <p>Student/Developer from Iran !!</p>
+    <div class="hero-buttons">
+      <a href="#projects">View Projects</a>
+    </div>
+  </div>
+  <div class="section" id="about">
+    <h2>About Me</h2>
+    <div class="about-content">
+      <p>Hello! I'm Shantia, a passionate student and developer with experience in Android tinkering (custom ROMs, root, kernel tweaks) and open-source projects. My journey in tech began with a curiosity about how mobile systems work, leading me to explore Android development. Since then, I've worked on various projects ranging from custom mods to utilities. When I'm not coding, you can find me exploring new technologies, contributing to open-source, or enhancing my skills through continuous learning.</p>
+    </div>
+  </div>
+  <div class="section" id="skills">
+    <h2>Skills</h2>
+    <div class="skills-content">
+      <div class="skill-bar"><span>Python</span><div class="progress"><div class="fill" style="width: 70%;"></div></div></div>
+      <div class="skill-bar"><span>Java</span><div class="progress"><div class="fill" style="width: 80%;"></div></div></div>
+      <div class="skill-bar"><span>C / C++</span><div class="progress"><div class="fill" style="width: 75%;"></div></div></div>
+      <div class="skill-bar"><span>Android (basic)</span><div class="progress"><div class="fill" style="width: 60%;"></div></div></div>
+    </div>
+  </div>
+  <div class="section" id="projects">
+    <h2>My Projects</h2>
+    <div class="projects-content">
+      <div class="project-card">
+        <h3>Telegram Group Checker</h3>
+        <p>A Python GUI tool to check user membership and messages.</p>
+        <a href="https://github.com/ishantia/TGC" target="_blank">View Project</a>
+      </div>
+      <!-- Duplicate for continuous scroll -->
+      <div class="project-card">
+        <h3>Telegram Group Checker</h3>
+        <p>A Python GUI tool to check user membership and messages.</p>
+        <a href="https://github.com/ishantia/TGC" target="_blank">View Project</a>
+      </div>
+      <div class="project-card">
+        <h3>Telegram Group Checker</h3>
+        <p>A Python GUI tool to check user membership and messages.</p>
+        <a href="https://github.com/ishantia/TGC" target="_blank">View Project</a>
+      </div>
+    </div>
+  </div>
+  <div class="section" id="contact">
+    <h2>Contact</h2>
+    <div class="contact-content">
+      <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <input type="text" placeholder="Subject" required>
+        <textarea placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+      <div>
+        <p>Email: <a href="mailto:shantiaeslami@gmail.com">shantiaeslami@gmail.com</a></p>
+        <p>Telegram: <a href="https://t.me/ishantia" target="_blank">@ishantia</a></p>
+        <p>Instagram: <a href="https://instagram.com/ishantia__" target="_blank">@ishantia__</a></p>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
