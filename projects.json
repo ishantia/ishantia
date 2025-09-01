@@ -3,11 +3,11 @@
     "name": "TGC",
     "description": "A powerful Python GUI tool to check user membership and recent messages in Telegram groups.",
     "link": "https://github.com/ishantia/TGC",
-    "tags": ["Python", "SpyTool", "Telegrem", "windows"]
+    "tags": ["Python", "SpyTool", "Telegram", "windows"]
   },
   {
     "name": "PakatPlast",
-    "description": "A WebShop for Folder and shhoping bags.",
+    "description": "A WebShop for Folder and shopping bags.",
     "link": "https://pakatplast.com",
     "tags": ["Windows", "Python"]
   },
@@ -48,5 +48,6 @@
     "tags": ["Test", "PlaceHolder"]
    }
 ]
+
 
 
