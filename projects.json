@@ -3,7 +3,7 @@
     "name": "TGC",
     "description": "A powerful Python GUI tool to check user membership and recent messages in Telegram groups.",
     "link": "https://github.com/ishantia/TGC",
-    "tags": ["Windows", "Python", "Project Management"]
+    "tags": ["Windows", "Python", "SpyToll"]
   },
   {
     "name": "PaktaPlast",
@@ -19,5 +19,6 @@
   }
 
 ]
+
 
 
