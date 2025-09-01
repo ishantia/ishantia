@@ -1,298 +1,775 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shantia - Portfolio</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background: #0a0f2b;
-      color: #fff;
-      font-family: 'Arial', sans-serif;
-      overflow-x: hidden;
-    }
-    .header {
-      text-align: center;
-      padding: 50px 20px;
-      background: linear-gradient(135deg, #1a1f3d, #2a2f5d);
-      animation: fadeIn 1.5s ease-in-out;
-    }
-    .nav {
-      margin-top: 20px;
-    }
-    .nav a {
-      color: #fff;
-      text-decoration: none;
-      margin: 0 15px;
-      font-size: 1.1em;
-      transition: color 0.3s;
-    }
-    .nav a:hover {
-      color: #3498db;
-    }
-    .hero {
-      text-align: center;
-      padding: 50px 20px;
-      position: relative;
-    }
-    .hero h1 {
-      font-size: 3.5em;
-      margin: 0;
-      background: linear-gradient(90deg, #8e44ad, #3498db);
-      -webkit-background-clip: text;
-      color: transparent;
-      animation: glow 2s infinite alternate;
-    }
-    .hero p {
-      font-size: 1.2em;
-      color: #bdc3c7;
-    }
-    .hero-buttons a {
-      display: inline-block;
-      padding: 10px 20px;
-      margin: 10px;
-      background: #3498db;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: background 0.3s;
-    }
-    .hero-buttons a:hover {
-      background: #2980b9;
-    }
-    .section {
-      padding: 50px 20px;
-      text-align: center;
-    }
-    .section h2 {
-      font-size: 2.5em;
-      margin-bottom: 20px;
-      position: relative;
-    }
-    .section h2::after {
-      content: '';
-      width: 50px;
-      height: 3px;
-      background: #e74c3c;
-      position: absolute;
-      bottom: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-    .about-content, .skills-content, .projects-content, .contact-content {
-      max-width: 800px;
-      margin: 0 auto;
-      background: rgba(255, 255, 255, 0.1);
-      padding: 20px;
-      border-radius: 10px;
-    }
-    .skills-content .skill-bar {
-      margin: 15px 0;
-      text-align: left;
-    }
-    .skills-content .skill-bar span {
-      display: block;
-      font-size: 1em;
-      margin-bottom: 5px;
-    }
-    .skills-content .skill-bar .progress {
-      height: 10px;
-      background: #34495e;
-      border-radius: 5px;
-      overflow: hidden;
-    }
-    .skills-content .skill-bar .progress .fill {
-      height: 100%;
-      background: #3498db;
-      animation: fillAnimation 2s ease-in-out;
-    }
-    .projects-content {
-      overflow-x: hidden;
-      white-space: nowrap;
-      padding: 20px 0;
-    }
-    .project-card {
-      display: inline-block;
-      width: 200px;
-      margin: 0 15px;
-      background: rgba(255, 255, 255, 0.1);
-      padding: 10px;
-      border-radius: 8px;
-      animation: scroll 15s linear infinite;
-    }
-    .contact-content form {
-      display: flex;
-      flex-direction: column;
-      max-width: 400px;
-      margin: 0 auto;
-    }
-    .contact-content form input, .contact-content form textarea {
-      margin: 10px 0;
-      padding: 10px;
-      background: #2c3e50;
-      border: none;
-      border-radius: 5px;
-      color: #fff;
-    }
-    .contact-content form button {
-      padding: 10px;
-      background: #3498db;
-      border: none;
-      border-radius: 5px;
-      color: #fff;
-      cursor: pointer;
-    }
-    .contact-content form button:hover {
-      background: #2980b9;
-    }
-    .social-buttons {
-      text-align: center;
-      padding: 20px 0;
-    }
-    .social-buttons a {
-      display: inline-block;
-      margin: 0 10px;
-      padding: 10px;
-      background: #2c3e50;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: background 0.3s;
-    }
-    .social-buttons a:hover {
-      background: #34495e;
-    }
-    .social-buttons a i {
-      margin-right: 5px;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    @keyframes glow {
-      from { text-shadow: 0 0 5px #8e44ad; }
-      to { text-shadow: 0 0 20px #3498db; }
-    }
-    @keyframes fillAnimation {
-      from { width: 0; }
-      to { width: 100%; }
-    }
-    @keyframes scroll {
-      0% { transform: translateX(100%); }
-      100% { transform: translateX(-100%); }
-    }
-    .background {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      z-index: -1;
-    }
-    .background span {
-      position: absolute;
-      background: #4a90e2;
-      border-radius: 50%;
-      animation: float 15s infinite;
-    }
-    @keyframes float {
-      0% { transform: translateY(0) scale(1); }
-      50% { transform: translateY(-20px) scale(1.2); }
-      100% { transform: translateY(0) scale(1); }
-    }
-    /* Hide scrollbar */
-    .projects-content::-webkit-scrollbar {
-      display: none;
-    }
-    .projects-content {
-      -ms-overflow-style: none; /* IE and Edge */
-      scrollbar-width: none; /* Firefox */
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShantiaEslami - Portfolio</title>
+    
+    <!-- Preconnect to external domains for faster resource loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Critical CSS first -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="background">
+    <!-- Loading Animation -->
+    <div class="loader-wrapper">
+        <div class="loader-content">
+            <div class="loader-circle">
+                <div class="loader-counter">0%</div>
+            </div>
+        </div>
+        <div class="scatter-particles" id="scatter-particles"></div>
+    </div>
+
+    <!-- Starry Background -->
+    <div class="stars-container"></div>
+    
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="#" class="logo">
+                <img src="assets/images/pfp.jpg" alt="Logo" width="42" height="42" style="border-radius: 50%; object-fit: cover;" loading="lazy">
+            </a>              
+            <div class="navbar-toggle" id="navbar-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="navbar-menu" id="navbar-menu">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1 data-text="Shantia Eslami">Shantia Eslami</h1>
+            <p class="hero-subtitle">Student/Developer from Iran !!</p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary">View Projects</a>
+                <button class="btn btn-secondary" id="resumeBtn">View Resume</button>
+            </div>
+            <div class="social-icons">
+                <a href="https://github.com/ishantia" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+                <a href="https://t.me/ishantia" target="_blank" rel="noopener"><i class="fab fa-telegram"></i></a>
+            </div>
+        </div>
+        
+        <!-- Interactive Element -->
+        <div class="creative-element">
+            <div class="floating-avatar">
+                <div class="avatar-circle">
+                    <div class="avatar-face">
+                        <div class="avatar-eyes">
+                            <div class="avatar-eye left">
+                                <div class="pupil"></div>
+                            </div>
+                            <div class="avatar-eye right">
+                                <div class="pupil"></div>
+                            </div>
+                        </div>
+                        <div class="avatar-smile"></div>
+                    </div>
+                    <div class="avatar-code-badge">
+                        <span>&lt;/&gt;</span>
+                    </div>
+                </div>
+                <div class="tech-orbit">
+                    <div class="tech-planet android">
+                        <i class="fab fa-android"></i>
+                        <div class="tech-tooltip">Android</div>
+                    </div>
+                    <div class="tech-planet java">
+                        <i class="fab fa-java"></i>
+                        <div class="tech-tooltip">Java</div>
+                    </div>
+                    <div class="tech-planet kotlin">
+                        <span>K</span>
+                        <div class="tech-tooltip">Kotlin</div>
+                    </div>
+                    <div class="tech-planet linux">
+                        <i class="fab fa-linux"></i>
+                        <div class="tech-tooltip">Linux</div>
+                    </div>
+                    <div class="tech-planet github">
+                        <i class="fab fa-github"></i>
+                        <div class="tech-tooltip">GitHub</div>
+                    </div>
+                </div>
+                <div class="avatar-rings">
+                    <div class="avatar-ring ring1"></div>
+                    <div class="avatar-ring ring2"></div>
+                    <div class="avatar-ring ring3"></div>
+                </div>
+                <div class="particle-field"></div>
+            </div>
+            <div class="code-terminal">
+                <div class="terminal-header">
+                    <div class="terminal-buttons">
+                        <span class="terminal-btn close"></span>
+                        <span class="terminal-btn minimize"></span>
+                        <span class="terminal-btn expand"></span>
+                    </div>
+                    <div class="terminal-title">shantiaeslami@dev:~</div>
+                </div>
+                <div class="terminal-body">
+                    <div class="terminal-line">
+                        <span class="terminal-prompt">$</span>
+                        <span class="terminal-text typing-text">Welcome to my portfolio!</span>
+                    </div>
+                    <div class="terminal-line">
+                        <span class="terminal-prompt">$</span>
+                        <span class="terminal-text waiting-cursor">Interact with the tech planets to learn more...</span>
+                    </div>
+                </div>
+                <div class="terminal-interaction-hint">
+                    Click on elements to interact!
+                </div>
+            </div>
+            <div class="skill-meter">
+                <div class="skill-meter-label">Skill Level</div>
+                <div class="skill-meter-bar">
+                    <div class="skill-meter-fill"></div>
+                    <div class="skill-meter-percentage">0%</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="floating-shapes">
+            <div class="floating-shape shape1"></div>
+            <div class="floating-shape shape2"></div>
+            <div class="floating-shape shape3"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text glass-card">
+                    <p>I’m Shantia, a student and tech enthusiast passionate about problem-solving and open-source projects</p>
+                    <p>I love experimenting with Android (custom ROMs, root, kernel tweaks) and exploring creative solutions through coding and technology.</p>
+                    <p>Always curious, always learning.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Skills Section -->
+    <section class="skills-section" id="skills">
+        <div class="container">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-container">
+                <div class="skill">
+                    <div class="skill-name">Android Development</div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 20%"></div>
+                    </div>
+                    <div class="skill-percentage">20%</div>
+                </div>
+                <div class="skill">
+                    <div class="skill-name">Git & GitHub</div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 60%"></div>
+                    </div>
+                    <div class="skill-percentage">60%</div>
+                </div>
+                <div class="skill">
+                    <div class="skill-name">Java</div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 95%"></div>
+                    </div>
+                    <div class="skill-percentage">95%</div>
+                </div>
+                <div class="skill">
+                    <div class="skill-name">Python</div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 99%"></div>
+                    </div>
+                    <div class="skill-percentage">99%</div>
+                </div>
+                <div class="skill">
+                    <div class="skill-name">C/C++</div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 75%"></div>
+                    </div>
+                    <div class="skill-percentage">75%</div>
+                </div>
+                <div class="skill">
+                    <div class="skill-name">C#</div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 45%"></div>
+                    </div>
+                    <div class="skill-percentage">45%</div>
+                </div>
+            </div>
+            
+            <h3 class="subsection-title" style="margin-top: 30px;">Tech Stack</h3>
+            <div class="tech-icons">
+                <div class="tech-icon">
+                    <i class="fab fa-android"></i>
+                    <span>Android</span>
+                </div>
+                <div class="tech-icon">
+                    <i class="fab fa-linux"></i>
+                    <span>Linux</span>
+                </div>
+                <div class="tech-icon">
+                    <i class="fab fa-git-alt"></i>
+                    <span>Git</span>
+                </div>
+                <div class="tech-icon">
+                    <i class="fab fa-github"></i>
+                    <span>GitHub</span>
+                </div>
+                <div class="tech-icon">
+                    <i class="fab fa-java"></i>
+                    <span>Java</span>
+                </div>
+                <div class="tech-icon">
+                    <svg class="kotlin-svg-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="2.5rem" height="2.5rem">
+                        <path d="M0,0 L12,12 L0,24 Z" fill="var(--primary-color)"/>
+                        <path d="M0,0 L24,0 L12,12 Z" fill="var(--primary-color)"/>
+                        <path d="M12,12 L24,0 L24,24 Z" fill="var(--primary-color)"/>
+                    </svg>
+                    <span>Kotlin</span>
+                </div>
+                <div class="tech-icon">
+                    <i class="fas fa-code"></i>
+                    <span>C/C++</span>
+                </div>
+                <div class="tech-icon">
+                    <i class="fab fa-python"></i>
+                    <span>Python</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Education Section -->
+    <!-- 
+<section class="education-section" id="education">
+    <div class="container">
+        <h2 class="section-title">Education</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="education-card">
+                    <h4>Computer Science and Engineering</h4>
+                    <p class="institution">Saveetha University</p>
+                    <p class="years">2022 - 2026</p>
+                    <p class="percentage">CGPA: 8.7/10</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="education-card">
+                    <h4>Intermediate College (MPC)</h4>
+                    <p class="institution">MGM Junior College</p>
+                    <p class="years">2020 - 2022</p>
+                    <p class="percentage">95%</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="education-card">
+                    <h4>Secondary School Education</h4>
+                    <p class="institution">Narayana E.M High School</p>
+                    <p class="years">2019 - 2020</p>
+                    <p class="percentage">98%</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+-->
+
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <h2 class="section-title">My Projects</h2>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card" data-category="TOOL">
+                    <div class="project-img">
+                        <img src="assets/images/project1.jpg" alt="AxionOS AOSP" width="400" height="225" loading="lazy">
+                    </div>
+                    <div class="project-content">
+                        <h3>TGC</h3>
+                        <p>A powerful Python GUI tool to check user membership and recent messages in Telegram groups. Requires Telegram API credentials and login. Multi-language, dark/light themes, and session management included.</p>
+                        <div class="project-tags">
+                            <span>Windows</span>
+                            <span>Python</span>
+                            <span>Project Management</span>
+                        </div>
+                        <a href="https://github.com/ishantia/TGC" class="project-link" target="_blank" rel="noopener">
+                            <i class="fab fa-github"></i> View Project
+                        </a>
+                    </div>
+                </div>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-container">
+                <div class="contact-info glass-card">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Email</h4>
+                            <p><a href="mailto:shantiaeslami@gmail.com">shantiaeslami@gmail.com</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>GitHub</h4>
+                            <p><a href="https://github.com/ishantia" target="_blank" rel="noopener">@ishantia</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-telegram"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Telegram</h4>
+                            <p><a href="https://t.me/ishantia" target="_blank" rel="noopener">@ishantia</a></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form glass-card">
+                    <form id="contact-form" action="https://formspree.io/f/xldwlwpb" method="POST">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary submit-btn">
+                            <span id="loading-spinner"></span>
+                            <span id="submit-text">Send Message</span>
+                        </button>
+                    </form>
+                    <div id="message-alert" class="alert success-alert">
+                        <i class="fas fa-check-circle"></i> Your message has been sent successfully!
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p class="copyright-text">&copy; 2025 Shantiaeslami All Rights Reserved.</p>
+        </div>
+    </section>
+
+    <!-- JavaScript for page functionality -->
+    <script src="script.js"></script>
+    
+    <!-- Navbar functionality and smooth scrolling -->
     <script>
-      for (let i = 0; i < 20; i++) {
-        const span = document.createElement('span');
-        span.style.left = Math.random() * 100 + 'vw';
-        span.style.top = Math.random() * 100 + 'vh';
-        span.style.width = Math.random() * 50 + 20 + 'px';
-        span.style.height = span.style.width;
-        span.style.animationDelay = Math.random() * 5 + 's';
-        document.querySelector('.background').appendChild(span);
-      }
+        document.addEventListener('DOMContentLoaded', function() {
+            // Navbar toggle functionality
+            const navbarToggle = document.getElementById('navbar-toggle');
+            const navbarMenu = document.getElementById('navbar-menu');
+            
+            if (navbarToggle && navbarMenu) {
+                navbarToggle.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    navbarMenu.classList.toggle('active');
+                });
+            }
+            
+            // Smooth scrolling for anchor links
+            const navLinks = document.querySelectorAll('.navbar-menu a, .hero-buttons a');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    // Close mobile menu if open
+                    if (navbarMenu.classList.contains('active')) {
+                        navbarToggle.classList.remove('active');
+                        navbarMenu.classList.remove('active');
+                    }
+                    
+                    const targetId = this.getAttribute('href');
+                    
+                    // Only process anchor links
+                    if (targetId.startsWith('#') && targetId.length > 1) {
+                        e.preventDefault();
+                        
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            // Adjust offset for skills section to show both skills and tech stack
+                            let offsetAdjustment = 80; // Default offset for navbar height
+                            if (targetId === '#skills') {
+                                offsetAdjustment = 100; // Larger offset to show more of the section
+                            }
+                            
+                            // Smooth scroll to target
+                            window.scrollTo({
+                                top: targetElement.offsetTop - offsetAdjustment,
+                                behavior: 'smooth'
+                            });
+                            
+                            // Update active class
+                            navLinks.forEach(navLink => navLink.classList.remove('active'));
+                            this.classList.add('active');
+                        }
+                    }
+                });
+            });
+            
+            // Set active link based on scroll position
+            function setActiveNavLink() {
+                const sections = document.querySelectorAll('section[id]');
+                const scrollPosition = window.scrollY;
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 100;
+                    const sectionHeight = section.offsetHeight;
+                    const sectionId = section.getAttribute('id');
+                    
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === '#' + sectionId) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }
+            
+            window.addEventListener('scroll', setActiveNavLink);
+            // Initial check
+            setActiveNavLink();
+        });
     </script>
-  </div>
-  <div class="header">
-    <div class="nav">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#education">Education</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
+    
+    <!-- Fallback script to ensure interactive elements work on GitHub Pages -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(function() {
+                const particleField = document.querySelector('.particle-field');
+                if (particleField && (!particleField.children || particleField.children.length === 0)) {
+                    createParticlesFallback(particleField, 25);
+                }
+                
+                const creativeElement = document.querySelector('.creative-element');
+                if (creativeElement && !creativeElement._initialized) {
+                    setupCreativeElementFallback();
+                }
+            }, 500);
+        });
+        
+        function createParticlesFallback(container, count) {
+            if (!container) return;
+            container.innerHTML = '';
+            
+            const colors = [
+                'var(--primary-color)',
+                'var(--secondary-color)',
+                'var(--accent-color)',
+                'rgba(255, 255, 255, 0.7)'
+            ];
+            
+            for (let i = 0; i < count; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.position = 'absolute';
+                
+                const size = Math.random() * 4 + 2;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                
+                particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                particle.style.borderRadius = '50%';
+                particle.style.opacity = Math.random() * 0.6 + 0.2;
+                
+                particle.style.top = `${Math.random() * 100}%`;
+                particle.style.left = `${Math.random() * 100}%`;
+                
+                particle.style.zIndex = Math.floor(Math.random() * 10);
+                
+                particle.style.setProperty('--float-x', (Math.random() * 2 - 1).toFixed(2));
+                particle.style.setProperty('--float-y', (Math.random() * 2 - 1).toFixed(2));
+                particle.style.setProperty('--float-z', (Math.random() * 2 - 1).toFixed(2));
+                particle.style.animation = `float-particle ${Math.random() * 5 + 3}s ease-in-out infinite`;
+                particle.style.animationDelay = `${Math.random() * 2}s`;
+                
+                container.appendChild(particle);
+            }
+        }
+        
+        function setupCreativeElementFallback() {
+            const creativeElement = document.querySelector('.creative-element');
+            const techPlanets = document.querySelectorAll('.tech-planet');
+            const terminal = document.querySelector('.code-terminal');
+            const avatarCircle = document.querySelector('.avatar-circle');
+            const pupils = document.querySelectorAll('.pupil');
+            const techOrbit = document.querySelector('.tech-orbit');
+            
+            if (!creativeElement) return;
+            creativeElement._initialized = true;
+            
+            if (!document.querySelector('.flying-particles-container')) {
+                const flyingParticlesContainer = document.createElement('div');
+                flyingParticlesContainer.className = 'flying-particles-container';
+                document.body.appendChild(flyingParticlesContainer);
+            }
+            
+            if (techOrbit) {
+                techOrbit.addEventListener('mouseenter', function() {
+                    this.style.animationPlayState = 'paused';
+                });
+                
+                techOrbit.addEventListener('mouseleave', function() {
+                    this.style.animationPlayState = 'running';
+                });
+            }
+            
+            const clearActivePlanets = () => {
+                techPlanets.forEach(p => p.classList.remove('active'));
+            };
+            
+            if (techPlanets.length) {
+                techPlanets.forEach(planet => {
+                    planet.addEventListener('mousedown', function(e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        
+                        clearActivePlanets();
+                        this.classList.add('active');
+                        
+                        const techName = this.className.split(' ')[1] || '';
+                        let level = 75;
+                        
+                        if (techName === 'android') level = 90;
+                        else if (techName === 'java') level = 85;
+                        else if (techName === 'kotlin') level = 70;
+                        else if (techName === 'linux') level = 85;
+                        else if (techName === 'github') level = 80;
+                        
+                        const skillMeter = document.querySelector('.skill-meter');
+                        if (skillMeter) {
+                            skillMeter.classList.add('visible');
+                            const fill = skillMeter.querySelector('.skill-meter-fill');
+                            const percentage = skillMeter.querySelector('.skill-meter-percentage');
+                            if (fill && percentage) {
+                                fill.style.width = `${level}%`;
+                                percentage.textContent = `${level}%`;
+                            }
+                        }
+                        
+                        const terminalBody = document.querySelector('.terminal-body');
+                        if (terminalBody) {
+                            const command = document.createElement('div');
+                            command.className = 'terminal-line';
+                            command.innerHTML = `<span class="terminal-prompt">$</span><span class="terminal-text">tech info ${techName}</span>`;
+                            
+                            const response = document.createElement('div');
+                            response.className = 'terminal-line';
+                            
+                            if (techName === 'android') {
+                                response.innerHTML = `<span class="terminal-text">Android development is my primary focus. I create custom ROMs and apps with ${level}% proficiency.</span>`;
+                            } else if (techName === 'java') {
+                                response.innerHTML = `<span class="terminal-text">Java is one of my main programming languages for Android development. ${level}% proficiency.</span>`;
+                            } else if (techName === 'kotlin') {
+                                response.innerHTML = `<span class="terminal-text">I've been learning Kotlin for modern Android app development. Currently at ${level}% proficiency.</span>`;
+                            } else if (techName === 'linux') {
+                                response.innerHTML = `<span class="terminal-text">I'm experienced with Linux for development and customization. ${level}% proficiency.</span>`;
+                            } else if (techName === 'github') {
+                                response.innerHTML = `<span class="terminal-text">Check out my projects on GitHub: github.com/shantiaeslami (${level}% proficiency with Git/GitHub)</span>`;
+                            } else {
+                                response.innerHTML = `<span class="terminal-text">Selected ${techName} technology.</span>`;
+                            }
+                            
+                            const lines = terminalBody.querySelectorAll('.terminal-line');
+                            if (lines.length > 4) {
+                                terminalBody.removeChild(lines[0]);
+                                if (lines.length > 5) terminalBody.removeChild(lines[1]);
+                            }
+                            
+                            terminalBody.appendChild(command);
+                            setTimeout(() => {
+                                terminalBody.appendChild(response);
+                                terminalBody.scrollTop = terminalBody.scrollHeight;
+                            }, 300);
+                        }
+                    });
+                    
+                    planet.addEventListener('mouseenter', function() {
+                        document.body.style.cursor = 'pointer';
+                        if (techOrbit) techOrbit.style.animationPlayState = 'paused';
+                    });
+                    
+                    planet.addEventListener('mouseleave', function() {
+                        document.body.style.cursor = 'default';
+                        if (techOrbit && !document.querySelector('.tech-planet:hover')) {
+                            techOrbit.style.animationPlayState = 'running';
+                        }
+                    });
+                });
+                
+                document.addEventListener('click', function(e) {
+                    if (!e.target.closest('.tech-planet')) {
+                        clearActivePlanets();
+                        const skillMeter = document.querySelector('.skill-meter');
+                        if (skillMeter) skillMeter.classList.remove('visible');
+                    }
+                });
+            }
+            
+            let isMouseMoving = false;
+            let mouseX = 0, mouseY = 0;
+            let rafId = null;
+            
+            document.addEventListener('mousemove', function(e) {
+                mouseX = e.clientX / window.innerWidth - 0.5;
+                mouseY = e.clientY / window.innerHeight - 0.5;
+                isMouseMoving = true;
+                
+                if (pupils.length && avatarCircle) {
+                    const avatarRect = avatarCircle.getBoundingClientRect();
+                    const avatarCenterX = avatarRect.left + avatarRect.width / 2;
+                    const avatarCenterY = avatarRect.top + avatarRect.height / 2;
+                    
+                    const dx = e.clientX - avatarCenterX;
+                    const dy = e.clientY - avatarCenterY;
+                    
+                    pupils.forEach(pupil => {
+                        const moveX = Math.min(Math.max(dx / 200, -3), 3);
+                        const moveY = Math.min(Math.max(dy / 200, -2), 2);
+                        pupil.style.transform = `translate(${moveX}px, ${moveY}px)`;
+                    });
+                }
+                
+                if (!rafId) {
+                    rafId = requestAnimationFrame(updateAnimation);
+                }
+            }, { passive: true });
+            
+            function updateAnimation() {
+                if (isMouseMoving && creativeElement) {
+                    creativeElement.style.transform = `perspective(1500px) rotateY(${mouseX * 6}deg) rotateX(${-mouseY * 4}deg)`;
+                    isMouseMoving = false;
+                }
+                rafId = null;
+            }
+            
+            let blinkTimer = null;
+            let isBlinking = false;
+            
+            function startBlinking() {
+                if (blinkTimer) clearInterval(blinkTimer);
+                
+                blinkTimer = setInterval(() => {
+                    if (isBlinking || document.querySelector('.tech-planet:hover') || document.querySelector('.tech-planet.active')) {
+                        return;
+                    }
+                    
+                    isBlinking = true;
+                    const avatarEyes = document.querySelectorAll('.avatar-eye');
+                    
+                    if (avatarEyes.length) {
+                        avatarEyes.forEach(eye => {
+                            eye.style.height = '1px';
+                            eye.style.transition = 'height 0.1s ease';
+                        });
+                        
+                        setTimeout(() => {
+                            avatarEyes.forEach(eye => {
+                                eye.style.height = '12px';
+                                eye.style.transition = 'height 0.2s ease';
+                            });
+                            isBlinking = false;
+                        }, 150);
+                    } else {
+                        isBlinking = false;
+                    }
+                }, Math.random() * 5000 + 5000);
+            }
+            
+            function stopBlinking() {
+                const avatarEyes = document.querySelectorAll('.avatar-eye');
+                if (avatarEyes.length) {
+                    avatarEyes.forEach(eye => {
+                        eye.style.height = '12px';
+                        eye.style.transition = 'height 0.2s ease';
+                    });
+                }
+                isBlinking = false;
+            }
+            
+            startBlinking();
+        }
+    </script>
+    
+    <!-- Image Modal -->
+    <div id="imageModal" class="image-modal">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="modalImage" alt="Enlarged project image">
     </div>
-  </div>
-  <div class="hero" id="home">
-    <h1>Shantia</h1>
-    <p>Student/Developer from Iran !!</p>
-    <div class="hero-buttons">
-      <a href="#projects">View Projects</a>
-    </div>
-  </div>
-  <div class="section" id="about">
-    <h2>About Me</h2>
-    <div class="about-content">
-      <p>Hello! I'm Shantia, a passionate student and developer with experience in Android tinkering and open-source projects. My journey began with curiosity about mobile systems, leading me to Android development.</p>
-      <p>I enjoy coding, exploring new tech, and contributing to open-source when not studying.</p>
-    </div>
-  </div>
-  <div class="section" id="skills">
-    <h2>Skills</h2>
-    <div class="skills-content">
-      <div class="skill-bar"><span>Python</span><div class="progress"><div class="fill" style="width: 70%;"></div></div></div>
-      <div class="skill-bar"><span>Java</span><div class="progress"><div class="fill" style="width: 80%;"></div></div></div>
-      <div class="skill-bar"><span>C / C++</span><div class="progress"><div class="fill" style="width: 75%;"></div></div></div>
-      <div class="skill-bar"><span>Android (basic)</span><div class="progress"><div class="fill" style="width: 60%;"></div></div></div>
-    </div>
-  </div>
-  <div class="section" id="projects">
-    <h2>My Projects</h2>
-    <div class="projects-content">
-      <div class="project-card">
-        <h3>Telegram Group Checker</h3>
-        <p>A Python GUI tool to check user membership.</p>
-        <p>Shows latest messages if found.</p>
-        <a href="https://github.com/ishantia/TGC" target="_blank">View Project</a>
-      </div>
-    </div>
-  </div>
-  <div class="section" id="contact">
-    <h2>Contact</h2>
-    <div class="contact-content">
-      <form>
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <input type="text" placeholder="Subject" required>
-        <textarea placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
-      <div>
-        <p>Email: <a href="mailto:shantiaeslami@gmail.com">shantiaeslami@gmail.com</a></p>
-        <p>Telegram: <a href="https://t.me/ishantia" target="_blank">@ishantia</a></p>
-        <p>Instagram: <a href="https://instagram.com/ishantia__" target="_blank">@ishantia__</a></p>
-      </div>
-    </div>
-  </div>
-  <div class="social-buttons">
-    <a href="https://t.me/ishantia" target="_blank"><i class="fab fa-telegram"></i></a>
-    <a href="https://instagram.com/ishantia__" target="_blank"><i class="fab fa-instagram"></i></a>
-    <a href="https://github.com/ishantia" target="_blank"><i class="fab fa-github"></i></a>
-  </div>
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const resumeModal = document.getElementById('resumeModal');
+        const resumeBtn = document.getElementById('resumeBtn');
+        const closeResumeBtn = document.querySelector('.close-resume');
+
+        // Open resume modal
+        resumeBtn.addEventListener('click', function() {
+            resumeModal.style.display = 'block';
+            setTimeout(() => {
+                resumeModal.classList.add('show');
+            }, 10);
+        });
+
+        // Close resume modal
+        function closeResumeModal() {
+            resumeModal.classList.remove('show');
+            setTimeout(() => {
+                resumeModal.style.display = 'none';
+            }, 300);
+        }
+
+        closeResumeBtn.addEventListener('click', closeResumeModal);
+
+        // Close modal when clicking outside
+        window.addEventListener('click', function(e) {
+            if (e.target === resumeModal) {
+                closeResumeModal();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && resumeModal.style.display === 'block') {
+                closeResumeModal();
+            }
+        });
+    });
+    </script>
 </body>
 </html>
