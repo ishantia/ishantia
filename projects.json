@@ -6,12 +6,6 @@
     "tags": ["Python", "SpyTool", "Telegram", "windows"]
   },
   {
-    "name": "PakatPlast",
-    "description": "A WebShop for Folder and shopping bags.",
-    "link": "https://pakatplast.com",
-    "tags": ["Windows", "Python"]
-  },
-  {
   "name": "WindowsCrash",
     "description": "An DigSpark project that can open CMD with admin rights and taskkil svchost.exe(causing Windows pc to crash.)",
     "link": "https://github.com/ishantia/WindowsCrash",
@@ -48,6 +42,7 @@
     "tags": ["Test", "PlaceHolder"]
    }
 ]
+
 
 
 
