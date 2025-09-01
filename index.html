@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shantia Eslami - Portfolio</title>
+    <title>Portfolio</title>
     
     <!-- Preconnect to external domains for faster resource loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,12 +17,12 @@
     <!-- Embedded Styles -->
     <style>
         :root {
-            --primary-color: #007bff;
-            --secondary-color: #6c757d;
-            --accent-color: #28a745;
-            --background-color: #f8f9fa;
-            --text-color: #333;
-            --white: #fff;
+            --primary-color: #00ffcc;
+            --secondary-color: #ff00ff;
+            --accent-color: #ffcc00;
+            --background-color: #1a1a2e;
+            --text-color: #e0e0e0;
+            --white: #00ffff;
         }
 
         * {
@@ -50,7 +50,7 @@
             justify-content: center;
             align-items: center;
             z-index: 9999;
-            transition: opacity 0.5s;
+            transition: opacity 0.5s ease-out;
         }
 
         .loader-wrapper.hidden {
@@ -59,9 +59,9 @@
         }
 
         .loader-circle {
-            width: 100px;
-            height: 100px;
-            border: 5px solid var(--white);
+            width: 80px;
+            height: 80px;
+            border: 4px solid var(--white);
             border-top-color: var(--accent-color);
             border-radius: 50%;
             animation: spin 1s linear infinite;
@@ -69,11 +69,9 @@
 
         .loader-counter {
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
             color: var(--white);
-            font-size: 1.2rem;
+            font-size: 1rem;
+            font-weight: 500;
         }
 
         @keyframes spin {
@@ -85,8 +83,8 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            background: rgba(26, 26, 46, 0.95);
+            box-shadow: 0 2px 5px rgba(0, 255, 204, 0.3);
             z-index: 1000;
         }
 
@@ -134,6 +132,34 @@
             transition: all 0.3s;
         }
 
+        .language-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        #google_translate_element {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: var(--background-color);
+            padding: 0.5rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .language-btn {
+            background: none;
+            border: none;
+            color: var(--text-color);
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .language-btn:hover {
+            color: var(--primary-color);
+        }
+
         @media (max-width: 768px) {
             .navbar-menu {
                 display: none;
@@ -141,7 +167,7 @@
                 top: 60px;
                 left: 0;
                 width: 100%;
-                background: var(--white);
+                background: var(--background-color);
                 flex-direction: column;
                 padding: 1rem;
             }
@@ -171,50 +197,48 @@
         .hero {
             min-height: 100vh;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
             padding: 2rem;
             position: relative;
-            overflow: hidden;
         }
 
         .hero-content h1 {
-            font-size: 3rem;
+            font-size: 2.5rem;
             margin-bottom: 1rem;
             color: var(--primary-color);
+            text-shadow: 0 0 10px var(--primary-color);
         }
 
         .hero-subtitle {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent-color);
         }
 
         .hero-buttons .btn {
-            padding: 0.8rem 1.5rem;
+            padding: 0.7rem 1.2rem;
             margin: 0.5rem;
             text-decoration: none;
             border-radius: 5px;
             font-weight: 500;
-            transition: background 0.3s;
+            transition: background 0.3s, color 0.3s;
         }
 
         .btn-primary {
             background: var(--primary-color);
-            color: var(--white);
+            color: var(--background-color);
         }
 
         .btn-primary:hover {
-            background: #0056b3;
-        }
-
-        .btn-secondary {
-            background: var(--secondary-color);
+            background: #00b3a3;
             color: var(--white);
         }
 
-        .btn-secondary:hover {
-            background: #5a6268;
+        .social-icons {
+            margin-top: 1rem;
         }
 
         .social-icons a {
@@ -226,28 +250,30 @@
 
         .social-icons a:hover {
             color: var(--primary-color);
+            text-shadow: 0 0 5px var(--primary-color);
         }
 
         /* Creative Element */
         .creative-element {
-            position: relative;
             margin-top: 2rem;
+            perspective: 1000px;
         }
 
         .floating-avatar {
             position: relative;
-            width: 150px;
-            height: 150px;
+            width: 120px;
+            height: 120px;
             margin: 0 auto;
         }
 
         .avatar-circle {
             width: 100%;
             height: 100%;
-            background: var(--primary-color);
+            background: linear-gradient(135deg, #00ffcc, #ffcc00);
             border-radius: 50%;
             position: relative;
             overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 255, 204, 0.5);
         }
 
         .avatar-face {
@@ -257,112 +283,22 @@
             transform: translate(-50%, -50%);
             width: 80%;
             height: 80%;
-        }
-
-        .avatar-eye {
-            position: absolute;
-            width: 20px;
-            height: 12px;
-            background: var(--white);
-            border-radius: 50%;
-            top: 30%;
-        }
-
-        .avatar-eye.left {
-            left: 20%;
-        }
-
-        .avatar-eye.right {
-            right: 20%;
-        }
-
-        .pupil {
-            width: 8px;
-            height: 8px;
-            background: var(--text-color);
-            border-radius: 50%;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        .avatar-smile {
-            position: absolute;
-            bottom: 20%;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 30px;
-            height: 10px;
-            background: transparent;
-            border: 2px solid var(--text-color);
-            border-top: none;
-            border-radius: 0 0 50% 50%;
-        }
-
-        .tech-orbit {
-            position: absolute;
-            width: 200px;
-            height: 200px;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            animation: rotate 20s linear infinite;
-        }
-
-        .tech-planet {
-            position: absolute;
-            width: 40px;
-            height: 40px;
-            background: var(--secondary-color);
-            border-radius: 50%;
             display: flex;
-            align-items: center;
             justify-content: center;
-            color: var(--white);
-            font-size: 1.2rem;
-            cursor: pointer;
-        }
-
-        .tech-planet.active {
-            background: var(--accent-color);
-        }
-
-        .tech-planet.android { transform: rotate(0deg) translateX(100px); }
-        .tech-planet.java { transform: rotate(72deg) translateX(100px); }
-        .tech-planet.kotlin { transform: rotate(144deg) translateX(100px); }
-        .tech-planet.linux { transform: rotate(216deg) translateX(100px); }
-        .tech-planet.github { transform: rotate(288deg) translateX(100px); }
-
-        .tech-tooltip {
-            position: absolute;
-            background: var(--text-color);
-            color: var(--white);
-            padding: 0.3rem 0.6rem;
-            border-radius: 3px;
-            font-size: 0.8rem;
-            top: -30px;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-
-        .tech-planet:hover .tech-tooltip {
-            opacity: 1;
-        }
-
-        @keyframes rotate {
-            to { transform: translate(-50%, -50%) rotate(360deg); }
+            align-items: center;
+            font-size: 3rem;
+            color: #ffeb3b;
+            text-shadow: 0 0 10px #ffeb3b;
         }
 
         .code-terminal {
-            background: #1a1a1a;
-            color: #fff;
+            background: #2e2e3a;
+            color: var(--text-color);
             padding: 1rem;
-            border-radius: 5px;
-            margin-top: 2rem;
+            border-radius: 8px;
+            margin: 2rem auto;
             max-width: 400px;
-            margin-left: auto;
-            margin-right: auto;
+            box-shadow: 0 0 15px rgba(0, 255, 204, 0.2);
         }
 
         .terminal-header {
@@ -390,6 +326,7 @@
 
         .terminal-line {
             margin: 0.3rem 0;
+            font-size: 0.9rem;
         }
 
         .terminal-prompt {
@@ -400,12 +337,18 @@
         .skill-meter {
             margin-top: 1rem;
             text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .skill-meter.visible {
+            opacity: 1;
         }
 
         .skill-meter-bar {
-            background: #ddd;
-            height: 10px;
-            border-radius: 5px;
+            background: #44445a;
+            height: 8px;
+            border-radius: 4px;
             overflow: hidden;
         }
 
@@ -413,7 +356,7 @@
             background: var(--primary-color);
             height: 100%;
             width: 0;
-            transition: width 0.5s;
+            transition: width 0.5s ease-in-out;
         }
 
         .skill-meter-percentage {
@@ -423,7 +366,7 @@
 
         /* About Section */
         .about {
-            padding: 4rem 1rem;
+            padding: 3rem 1rem;
             text-align: center;
         }
 
@@ -434,22 +377,23 @@
         }
 
         .section-title {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
             color: var(--primary-color);
+            text-shadow: 0 0 10px var(--primary-color);
         }
 
         .glass-card {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(46, 46, 58, 0.5);
             backdrop-filter: blur(10px);
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 255, 204, 0.1);
         }
 
         /* Skills Section */
         .skills-section {
-            padding: 4rem 1rem;
+            padding: 3rem 1rem;
         }
 
         .skills-container {
@@ -463,9 +407,9 @@
         }
 
         .skill-bar {
-            background: #ddd;
-            height: 10px;
-            border-radius: 5px;
+            background: #44445a;
+            height: 8px;
+            border-radius: 4px;
             overflow: hidden;
         }
 
@@ -480,12 +424,12 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 1rem;
-            margin-top: 2rem;
+            margin-top: 1.5rem;
         }
 
         .tech-icon {
             text-align: center;
-            font-size: 2.5rem;
+            font-size: 2rem;
         }
 
         .tech-icon span {
@@ -496,20 +440,20 @@
 
         /* Projects Section */
         .projects {
-            padding: 4rem 1rem;
+            padding: 3rem 1rem;
         }
 
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            gap: 1.5rem;
         }
 
         .project-card {
-            background: var(--white);
-            border-radius: 10px;
+            background: #2e2e3a;
+            border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 15px rgba(0, 255, 204, 0.1);
             transition: transform 0.3s;
         }
 
@@ -517,26 +461,22 @@
             transform: translateY(-5px);
         }
 
-        .project-img img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
         .project-content {
             padding: 1rem;
         }
 
         .project-tags {
+            display: flex;
+            flex-wrap: wrap;
             margin: 0.5rem 0;
+            gap: 0.5rem;
         }
 
         .project-tags span {
             background: var(--primary-color);
-            color: var(--white);
+            color: var(--background-color);
             padding: 0.3rem 0.6rem;
             border-radius: 3px;
-            margin-right: 0.5rem;
             font-size: 0.8rem;
         }
 
@@ -552,13 +492,13 @@
 
         /* Contact Section */
         .contact {
-            padding: 4rem 1rem;
+            padding: 3rem 1rem;
         }
 
         .contact-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 2rem;
+            gap: 1.5rem;
         }
 
         .contact-item {
@@ -585,28 +525,42 @@
         .contact-form input,
         .contact-form textarea {
             width: 100%;
-            padding: 0.8rem;
+            padding: 0.7rem;
             margin-bottom: 1rem;
-            border: 1px solid #ddd;
+            border: 1px solid #44445a;
             border-radius: 5px;
+            background: #2e2e3a;
+            color: var(--text-color);
             font-family: 'Poppins', sans-serif;
         }
 
         .contact-form textarea {
-            height: 150px;
+            height: 120px;
             resize: vertical;
         }
 
         .submit-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            padding: 0.7rem 1.2rem;
+            margin: 0.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: background 0.3s, color 0.3s;
+            background: var(--primary-color);
+            color: var(--background-color);
+            border: none;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background: #00b3a3;
+            color: var(--white);
         }
 
         .success-alert {
             display: none;
             background: var(--accent-color);
-            color: var(--white);
+            color: var(--background-color);
             padding: 1rem;
             border-radius: 5px;
             margin-top: 1rem;
@@ -620,44 +574,6 @@
             text-align: center;
             margin-top: 2rem;
             font-size: 0.9rem;
-        }
-
-        /* Resume Modal */
-        .resume-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 2000;
-            justify-content: center;
-            align-items: center;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-
-        .resume-modal.show {
-            display: flex;
-            opacity: 1;
-        }
-
-        .resume-content {
-            background: var(--white);
-            padding: 2rem;
-            border-radius: 10px;
-            max-width: 600px;
-            width: 90%;
-            position: relative;
-        }
-
-        .close-resume {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            font-size: 1.5rem;
-            cursor: pointer;
         }
 
         /* Image Modal */
@@ -677,7 +593,7 @@
         .image-modal img {
             max-width: 90%;
             max-height: 90%;
-            border-radius: 10px;
+            border-radius: 8px;
         }
 
         .close-modal {
@@ -690,7 +606,28 @@
         }
 
         @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero-subtitle {
+                font-size: 0.9rem;
+            }
+
+            .floating-avatar {
+                width: 90px;
+                height: 90px;
+            }
+
+            .hero-content, .creative-element {
+                width: 100%;
+            }
+
             .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -709,9 +646,6 @@
     <!-- Navbar -->
     <nav class="navbar">
         <div class="navbar-container">
-            <a href="#" class="logo" aria-label="Shantia Eslami's Portfolio">
-                <img src="assets/images/pfp.jpg" alt="Shantia Eslami's profile picture" width="42" height="42" style="border-radius: 50%; object-fit: cover;" loading="lazy">
-            </a>              
             <div class="navbar-toggle" id="navbar-toggle" role="button" aria-label="Toggle navigation menu">
                 <span></span>
                 <span></span>
@@ -724,17 +658,20 @@
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <div class="language-dropdown">
+                <button class="language-btn" onclick="toggleTranslateMenu()"><i class="fas fa-globe"></i></button>
+                <div id="google_translate_element"></div>
+            </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-content">
-            <h1>Shantia Eslami</h1>
+            <h1>Portfolio</h1>
             <p class="hero-subtitle">Student/Developer from Iran</p>
             <div class="hero-buttons">
                 <a href="#projects" class="btn btn-primary">View Projects</a>
-                <button class="btn btn-secondary" id="resumeBtn" aria-label="View resume">View Resume</button>
             </div>
             <div class="social-icons">
                 <a href="https://github.com/ishantia" target="_blank" rel="noopener" aria-label="GitHub profile"><i class="fab fa-github"></i></a>
@@ -746,39 +683,7 @@
         <div class="creative-element">
             <div class="floating-avatar">
                 <div class="avatar-circle">
-                    <div class="avatar-face">
-                        <div class="avatar-eyes">
-                            <div class="avatar-eye left">
-                                <div class="pupil"></div>
-                            </div>
-                            <div class="avatar-eye right">
-                                <div class="pupil"></div>
-                            </div>
-                        </div>
-                        <div class="avatar-smile"></div>
-                    </div>
-                </div>
-                <div class="tech-orbit">
-                    <div class="tech-planet android">
-                        <i class="fab fa-android"></i>
-                        <div class="tech-tooltip">Android</div>
-                    </div>
-                    <div class="tech-planet java">
-                        <i class="fab fa-java"></i>
-                        <div class="tech-tooltip">Java</div>
-                    </div>
-                    <div class="tech-planet kotlin">
-                        <span>K</span>
-                        <div class="tech-tooltip">Kotlin</div>
-                    </div>
-                    <div class="tech-planet linux">
-                        <i class="fab fa-linux"></i>
-                        <div class="tech-tooltip">Linux</div>
-                    </div>
-                    <div class="tech-planet github">
-                        <i class="fab fa-github"></i>
-                        <div class="tech-tooltip">GitHub</div>
-                    </div>
+                    <div class="avatar-face">😊</div>
                 </div>
             </div>
             <div class="code-terminal">
@@ -788,7 +693,7 @@
                         <span class="terminal-btn minimize"></span>
                         <span class="terminal-btn expand"></span>
                     </div>
-                    <div class="terminal-title">shantiaeslami@dev:~</div>
+                    <div class="terminal-title">dev:~</div>
                 </div>
                 <div class="terminal-body">
                     <div class="terminal-line">
@@ -797,7 +702,7 @@
                     </div>
                     <div class="terminal-line">
                         <span class="terminal-prompt">$</span>
-                        <span class="terminal-text">Interact with the tech planets...</span>
+                        <span class="terminal-text">Explore the sections below...</span>
                     </div>
                 </div>
             </div>
@@ -817,7 +722,7 @@
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
                 <div class="about-text glass-card">
-                    <p>I’m Shantia, a student and tech enthusiast passionate about problem-solving and open-source projects.</p>
+                    <p>I’m a student and tech enthusiast passionate about problem-solving and open-source projects.</p>
                     <p>I love experimenting with Android (custom ROMs, root, kernel tweaks) and exploring creative solutions through coding and technology.</p>
                     <p>Always curious, always learning.</p>
                 </div>
@@ -877,40 +782,24 @@
             <h3 class="subsection-title" style="margin-top: 30px;">Tech Stack</h3>
             <div class="tech-icons">
                 <div class="tech-icon">
-                    <i class="fab fa-android"></i>
-                    <span>Android</span>
-                </div>
-                <div class="tech-icon">
-                    <i class="fab fa-linux"></i>
-                    <span>Linux</span>
-                </div>
-                <div class="tech-icon">
-                    <i class="fab fa-git-alt"></i>
-                    <span>Git</span>
-                </div>
-                <div class="tech-icon">
-                    <i class="fab fa-github"></i>
-                    <span>GitHub</span>
-                </div>
-                <div class="tech-icon">
-                    <i class="fab fa-java"></i>
-                    <span>Java</span>
-                </div>
-                <div class="tech-icon">
-                    <svg class="kotlin-svg-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="2.5rem" height="2.5rem">
-                        <path d="M0,0 L12,12 L0,24 Z" fill="var(--primary-color)"/>
-                        <path d="M0,0 L24,0 L12,12 Z" fill="var(--primary-color)"/>
-                        <path d="M12,12 L24,0 L24,24 Z" fill="var(--primary-color)"/>
-                    </svg>
-                    <span>Kotlin</span>
+                    <i class="fas fa-hashtag"></i>
+                    <span>C#</span>
                 </div>
                 <div class="tech-icon">
                     <i class="fas fa-code"></i>
                     <span>C/C++</span>
                 </div>
                 <div class="tech-icon">
+                    <i class="fab fa-java"></i>
+                    <span>Java</span>
+                </div>
+                <div class="tech-icon">
                     <i class="fab fa-python"></i>
                     <span>Python</span>
+                </div>
+                <div class="tech-icon">
+                    <i class="fas fa-network-wired"></i>
+                    <span>Cisco</span>
                 </div>
             </div>
         </div>
@@ -923,9 +812,6 @@
             <div class="projects-grid">
                 <!-- Project 1 -->
                 <div class="project-card" data-category="TOOL">
-                    <div class="project-img">
-                        <img src="assets/images/project1.jpg" alt="TGC project screenshot" width="400" height="225" loading="lazy">
-                    </div>
                     <div class="project-content">
                         <h3>TGC</h3>
                         <p>A powerful Python GUI tool to check user membership and recent messages in Telegram groups. Requires Telegram API credentials and login. Multi-language, dark/light themes, and session management included.</p>
@@ -939,21 +825,17 @@
                         </a>
                     </div>
                 </div>
-                <!-- Project 2 (Sample) -->
-                <div class="project-card" data-category="APP">
-                    <div class="project-img">
-                        <img src="assets/images/project2.jpg" alt="Sample Android App screenshot" width="400" height="225" loading="lazy">
-                    </div>
+                <!-- Project 2 (Lorem Ipsum) -->
+                <div class="project-card" data-category="TEST">
                     <div class="project-content">
-                        <h3>Sample Android App</h3>
-                        <p>An Android application built with Kotlin for task management, featuring a clean UI and local database integration.</p>
+                        <h3>Lorem Ipsum</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
                         <div class="project-tags">
-                            <span>Android</span>
-                            <span>Kotlin</span>
-                            <span>Mobile</span>
+                            <span>Test</span>
+                            <span>Placeholder</span>
                         </div>
-                        <a href="https://github.com/ishantia/sample-app" class="project-link" target="_blank" rel="noopener" aria-label="View Sample Android App on GitHub">
-                            <i class="fab fa-github"></i> View Project
+                        <a href="#" class="project-link" aria-label="View Lorem Ipsum project">
+                            <i class="fas fa-eye"></i> View Project
                         </a>
                     </div>
                 </div>
@@ -1010,7 +892,7 @@
                         <div class="form-group">
                             <textarea id="message" name="message" placeholder="Your Message" required aria-label="Your message"></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary submit-btn" aria-label="Send message">
+                        <button type="submit" class="submit-btn" aria-label="Send message">
                             <span id="loading-spinner"></span>
                             <span id="submit-text">Send Message</span>
                         </button>
@@ -1022,19 +904,9 @@
             </div>
         </div>
         <div class="copyright">
-            <p class="copyright-text">&copy; 2025 Shantia Eslami All Rights Reserved.</p>
+            <p class="copyright-text">&copy; 2025 All Rights Reserved.</p>
         </div>
     </section>
-
-    <!-- Resume Modal -->
-    <div id="resumeModal" class="resume-modal">
-        <div class="resume-content">
-            <span class="close-resume" aria-label="Close resume modal">&times;</span>
-            <h2>Resume</h2>
-            <p>Download or view my resume below:</p>
-            <a href="assets/resume.pdf" class="btn btn-primary" target="_blank" rel="noopener" aria-label="Download resume">Download Resume (PDF)</a>
-        </div>
-    </div>
 
     <!-- Image Modal -->
     <div id="imageModal" class="image-modal">
@@ -1042,15 +914,35 @@
         <img class="modal-content" id="modalImage" alt="Enlarged project image">
     </div>
 
+    <!-- Google Translate Script -->
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+        }
+
+        function toggleTranslateMenu() {
+            var element = document.getElementById('google_translate_element');
+            element.style.display = element.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+
     <!-- JavaScript -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Hide loader after page load
             const loader = document.querySelector('.loader-wrapper');
             if (loader) {
-                setTimeout(() => {
-                    loader.classList.add('hidden');
-                }, 1000);
+                let progress = 0;
+                const counter = document.querySelector('.loader-counter');
+                const interval = setInterval(() => {
+                    progress += 10;
+                    counter.textContent = `${progress}%`;
+                    if (progress >= 100) {
+                        clearInterval(interval);
+                        loader.classList.add('hidden');
+                    }
+                }, 100);
             }
 
             // Navbar toggle
@@ -1110,44 +1002,11 @@
             window.addEventListener('scroll', setActiveNavLink);
             setActiveNavLink();
 
-            // Resume modal
-            const resumeModal = document.getElementById('resumeModal');
-            const resumeBtn = document.getElementById('resumeBtn');
-            const closeResumeBtn = document.querySelector('.close-resume');
-            if (resumeBtn && resumeModal && closeResumeBtn) {
-                resumeBtn.addEventListener('click', () => {
-                    resumeModal.style.display = 'flex';
-                    setTimeout(() => resumeModal.classList.add('show'), 10);
-                });
-
-                function closeResumeModal() {
-                    resumeModal.classList.remove('show');
-                    setTimeout(() => resumeModal.style.display = 'none', 300);
-                }
-
-                closeResumeBtn.addEventListener('click', closeResumeModal);
-                window.addEventListener('click', e => {
-                    if (e.target === resumeModal) closeResumeModal();
-                });
-                document.addEventListener('keydown', e => {
-                    if (e.key === 'Escape' && resumeModal.style.display === 'flex') closeResumeModal();
-                });
-            }
-
             // Image modal
             const imageModal = document.getElementById('imageModal');
             const modalImage = document.getElementById('modalImage');
             const closeModal = document.querySelector('.close-modal');
-            const projectImages = document.querySelectorAll('.project-img img');
             if (imageModal && modalImage && closeModal) {
-                projectImages.forEach(img => {
-                    img.addEventListener('click', () => {
-                        modalImage.src = img.src;
-                        modalImage.alt = img.alt;
-                        imageModal.style.display = 'flex';
-                    });
-                });
-
                 closeModal.addEventListener('click', () => {
                     imageModal.style.display = 'none';
                 });
@@ -1157,165 +1016,16 @@
                 });
             }
 
-            // Interactive tech planets
-            const techPlanets = document.querySelectorAll('.tech-planet');
-            const terminalBody = document.querySelector('.terminal-body');
+            // Interactive skill meter (since orbit is removed)
             const skillMeter = document.querySelector('.skill-meter');
             const skillMeterFill = document.querySelector('.skill-meter-fill');
             const skillMeterPercentage = document.querySelector('.skill-meter-percentage');
-            const techOrbit = document.querySelector('.tech-orbit');
-            const pupils = document.querySelectorAll('.pupil');
-            const avatarCircle = document.querySelector('.avatar-circle');
 
-            if (techOrbit) {
-                techOrbit.addEventListener('mouseenter', () => techOrbit.style.animationPlayState = 'paused');
-                techOrbit.addEventListener('mouseleave', () => techOrbit.style.animationPlayState = 'running');
+            if (skillMeter && skillMeterFill && skillMeterPercentage) {
+                skillMeter.classList.add('visible');
+                skillMeterFill.style.width = '75%';
+                skillMeterPercentage.textContent = '75%';
             }
-
-            const clearActivePlanets = () => techPlanets.forEach(p => p.classList.remove('active'));
-
-            techPlanets.forEach(planet => {
-                planet.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    clearActivePlanets();
-                    this.classList.add('active');
-
-                    const techName = this.className.split(' ')[1] || '';
-                    let level = 75;
-                    let message = `Selected ${techName} technology.`;
-
-                    if (techName === 'android') {
-                        level = 90;
-                        message = `Android development is my primary focus. I create custom ROMs and apps with ${level}% proficiency.`;
-                    } else if (techName === 'java') {
-                        level = 85;
-                        message = `Java is one of my main programming languages for Android development. ${level}% proficiency.`;
-                    } else if (techName === 'kotlin') {
-                        level = 70;
-                        message = `I've been learning Kotlin for modern Android app development. Currently at ${level}% proficiency.`;
-                    } else if (techName === 'linux') {
-                        level = 85;
-                        message = `I'm experienced with Linux for development and customization. ${level}% proficiency.`;
-                    } else if (techName === 'github') {
-                        level = 80;
-                        message = `Check out my projects on GitHub: github.com/shantiaeslami (${level}% proficiency with Git/GitHub).`;
-                    }
-
-                    if (skillMeter && skillMeterFill && skillMeterPercentage) {
-                        skillMeter.classList.add('visible');
-                        skillMeterFill.style.width = `${level}%`;
-                        skillMeterPercentage.textContent = `${level}%`;
-                    }
-
-                    if (terminalBody) {
-                        const command = document.createElement('div');
-                        command.className = 'terminal-line';
-                        command.innerHTML = `<span class="terminal-prompt">$</span><span class="terminal-text">tech info ${techName}</span>`;
-
-                        const response = document.createElement('div');
-                        response.className = 'terminal-line';
-                        response.innerHTML = `<span class="terminal-text">${message}</span>`;
-
-                        const lines = terminalBody.querySelectorAll('.terminal-line');
-                        if (lines.length > 4) {
-                            terminalBody.removeChild(lines[0]);
-                            if (lines.length > 5) terminalBody.removeChild(lines[1]);
-                        }
-
-                        terminalBody.appendChild(command);
-                        setTimeout(() => {
-                            terminalBody.appendChild(response);
-                            terminalBody.scrollTop = terminalBody.scrollHeight;
-                        }, 300);
-                    }
-                });
-
-                planet.addEventListener('mouseenter', () => {
-                    document.body.style.cursor = 'pointer';
-                    if (techOrbit) techOrbit.style.animationPlayState = 'paused';
-                });
-
-                planet.addEventListener('mouseleave', () => {
-                    document.body.style.cursor = 'default';
-                    if (techOrbit && !document.querySelector('.tech-planet:hover')) {
-                        techOrbit.style.animationPlayState = 'running';
-                    }
-                });
-            });
-
-            document.addEventListener('click', e => {
-                if (!e.target.closest('.tech-planet') && skillMeter) {
-                    skillMeter.classList.remove('visible');
-                    clearActivePlanets();
-                }
-            });
-
-            // Avatar eye movement
-            let isMouseMoving = false;
-            let mouseX = 0, mouseY = 0;
-            let rafId = null;
-
-            document.addEventListener('mousemove', e => {
-                mouseX = e.clientX / window.innerWidth - 0.5;
-                mouseY = e.clientY / window.innerHeight - 0.5;
-                isMouseMoving = true;
-
-                if (pupils.length && avatarCircle) {
-                    const avatarRect = avatarCircle.getBoundingClientRect();
-                    const avatarCenterX = avatarRect.left + avatarRect.width / 2;
-                    const avatarCenterY = avatarRect.top + avatarRect.height / 2;
-
-                    const dx = e.clientX - avatarCenterX;
-                    const dy = e.clientY - avatarCenterY;
-
-                    pupils.forEach(pupil => {
-                        const moveX = Math.min(Math.max(dx / 200, -3), 3);
-                        const moveY = Math.min(Math.max(dy / 200, -2), 2);
-                        pupil.style.transform = `translate(${moveX}px, ${moveY}px)`;
-                    });
-                }
-
-                if (!rafId) {
-                    rafId = requestAnimationFrame(() => {
-                        if (isMouseMoving && document.querySelector('.creative-element')) {
-                            document.querySelector('.creative-element').style.transform = `perspective(1500px) rotateY(${mouseX * 6}deg) rotateX(${-mouseY * 4}deg)`;
-                            isMouseMoving = false;
-                        }
-                        rafId = null;
-                    });
-                }
-            }, { passive: true });
-
-            // Avatar blinking
-            let blinkTimer = null;
-            let isBlinking = false;
-
-            function startBlinking() {
-                if (blinkTimer) clearInterval(blinkTimer);
-                blinkTimer = setInterval(() => {
-                    if (isBlinking || document.querySelector('.tech-planet:hover') || document.querySelector('.tech-planet.active')) return;
-                    isBlinking = true;
-                    const avatarEyes = document.querySelectorAll('.avatar-eye');
-                    if (avatarEyes.length) {
-                        avatarEyes.forEach(eye => {
-                            eye.style.height = '1px';
-                            eye.style.transition = 'height 0.1s ease';
-                        });
-                        setTimeout(() => {
-                            avatarEyes.forEach(eye => {
-                                eye.style.height = '12px';
-                                eye.style.transition = 'height 0.2s ease';
-                            });
-                            isBlinking = false;
-                        }, 150);
-                    } else {
-                        isBlinking = false;
-                    }
-                }, Math.random() * 5000 + 5000);
-            }
-
-            startBlinking();
 
             // Form submission
             const contactForm = document.getElementById('contact-form');
