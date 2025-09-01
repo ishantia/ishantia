@@ -22,7 +22,7 @@
     "description": "Yet another project.",
     "link": "https://example2.com",
     "tags": ["Test"]
-  }
+  },
   {
     "name": "Project 5",
     "description": "Another project.",
@@ -36,4 +36,5 @@
     "tags": ["Test"]
   },
 ]
+
 
