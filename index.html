@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shantia - GitHub Portfolio</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #0a0a0a;
+      color: #fff;
+      overflow-x: hidden;
+    }
+    .header {
+      text-align: center;
+      padding: 20px;
+      background: #1a1a1a;
+      animation: fadeIn 2s ease-in;
+    }
+    .header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+    .projects {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      padding: 20px;
+      gap: 20px;
+    }
+    .project-card {
+      min-width: 300px;
+      background: #2a2a2a;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      animation: slideIn 15s infinite linear;
+    }
+    .project-card h3 {
+      margin: 0 0 10px 0;
+      font-size: 1.2em;
+    }
+    .project-card p {
+      margin: 0;
+      font-size: 0.9em;
+      color: #ccc;
+    }
+    .project-card a {
+      color: #1e90ff;
+      text-decoration: none;
+    }
+    .project-card a:hover {
+      text-decoration: underline;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes slideIn {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+    /* Ensure smooth scrolling behavior */
+    .projects {
+      -webkit-overflow-scrolling: touch;
+    }
+    /* Hide scrollbar for better look */
+    .projects::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Shantia - GitHub Portfolio</h1>
+    <p>Welcome to my GitHub Projects Showcase!</p>
+  </div>
+  <div class="projects">
+    <div class="project-card">
+      <h3>Telegram Group Checker</h3>
+      <p>A Python GUI tool to check user membership and messages in Telegram groups. <a href="https://github.com/ishantia/TGC" target="_blank">View on GitHub</a></p>
+    </div>
+    <!-- Add more project cards as needed based on your repositories -->
+    <div class="project-card">
+      <h3>Custom Android Mods</h3>
+      <p>Personal experiments with Android custom ROMs and scripts. <a href="https://github.com/ishantia?tab=repositories&q=android" target="_blank">Explore Repos</a></p>
+    </div>
+    <div class="project-card">
+      <h3>Open-Source Utilities</h3>
+      <p>Various utilities and experiments shared on GitHub. <a href="https://github.com/ishantia?tab=repositories" target="_blank">See All</a></p>
+    </div>
+    <!-- Duplicate cards for continuous effect -->
+    <div class="project-card">
+      <h3>Telegram Group Checker</h3>
+      <p>A Python GUI tool to check user membership and messages in Telegram groups. <a href="https://github.com/ishantia/TGC" target="_blank">View on GitHub</a></p>
+    </div>
+    <div class="project-card">
+      <h3>Custom Android Mods</h3>
+      <p>Personal experiments with Android custom ROMs and scripts. <a href="https://github.com/ishantia?tab=repositories&q=android" target="_blank">Explore Repos</a></p>
+    </div>
+    <div class="project-card">
+      <h3>Open-Source Utilities</h3>
+      <p>Various utilities and experiments shared on GitHub. <a href="https://github.com/ishantia?tab=repositories" target="_blank">See All</a></p>
+    </div>
+  </div>
+  <script>
+    // Ensure continuous animation by cloning elements
+    const projects = document.querySelector('.projects');
+    const cards = document.querySelectorAll('.project-card');
+    cards.forEach(card => {
+      const clone = card.cloneNode(true);
+      projects.appendChild(clone);
+    });
+  </script>
+</body>
+</html>
