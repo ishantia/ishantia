@@ -6,9 +6,10 @@
     "tags": ["Windows", "Python", "Project Management"]
   },
   {
-    "name": "Lorem Ipsum",
-    "description": "A test project with placeholder content.",
-    "link": "#",
-    "tags": ["Test", "Placeholder"]
+    "name": "PaktaPlast",
+    "description": "Shoping Folder site.",
+    "link": "pakatplast.com",
+    "tags": ["Shop", "Site"]
   }
+
 ]
