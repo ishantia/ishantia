@@ -753,17 +753,40 @@
 
     <!-- About Section -->
     <section class="about" id="about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-text glass-card">
-                    <p>💡 Student & tech enthusiast passionate about problem-solving and open-source.</p>
-                    <p>⚡ Love tinkering with Android (custom ROMs, root, kernel tweaks) and building creative solutions through code.</p>
-                    <p>🚀 Curious mind, always learning.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+  <div class="container">
+    <h2 class="section-title">About Me</h2>
+    <div class="about-content">
+      <div class="about-text glass-card">
+        <p class="about-item">💡 Student & tech enthusiast passionate about problem-solving and open-source.</p>
+        <p class="about-item">⚡ Love tinkering with Android (custom ROMs, root, kernel tweaks) and building creative solutions through code.</p>
+        <p class="about-item">🚀 Curious mind, always learning.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-text {
+    padding: 20px;
+    line-height: 1.6;
+  }
+
+  .about-item {
+    margin-bottom: 15px;   /* فاصله بین هر آیتم */
+    font-size: 1.05rem;    /* سایز کمی بزرگ‌تر برای خوانایی */
+  }
+
+  .about-item:last-child {
+    margin-bottom: 0;      /* آخرین خط فاصله اضافی نداشته باشه */
+  }
+
+  @media (max-width: 768px) {
+    .about-item {
+      font-size: 0.95rem;  /* تو موبایل متن جمع‌وجورتر بشه */
+    }
+  }
+</style>
+
     
     <!-- Skills Section -->
     <section class="skills-section" id="skills">
