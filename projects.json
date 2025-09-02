@@ -12,36 +12,19 @@
     "tags": ["CMD", "DigiSpark", "Arduino"]
    },
   {
-  "name": "Test Project2",
-    "description": "A new project will be release ASAP!",
-    "link": "https://example.com",
-    "tags": ["Test", "PlaceHolder"]
+  "name": "Pin-Cracker",
+    "description": "A DigiSpark script for brute-forcing 4 and 5digit PINs by simulating USB keyboard input.",
+    "link": "https://github.com/ishantia/Pin-Cracker",
+    "tags": ["Brut-Force", "DigiSpark", "Arduino"]
    },
   {
-  "name": "Test Project3",
-    "description": "A new project will be release ASAP!",
-    "link": "https://example.com",
-    "tags": ["Test", "PlaceHolder"]
-   },
-  {
-  "name": "Test Project4",
-    "description": "A new project will be release ASAP!",
-    "link": "https://example.com",
-    "tags": ["Test", "PlaceHolder"]
-   },
-  {
-  "name": "Test Project5",
-    "description": "A new project will be release ASAP!",
-    "link": "https://example.com",
-    "tags": ["Test", "PlaceHolder"]
-   },
-  {
-  "name": "Test Project6",
-    "description": "A new project will be release ASAP!",
-    "link": "https://example.com",
-    "tags": ["Test", "PlaceHolder"]
+  "name": "My Portfolio",
+    "description": "My portfolio website, which includes my projects, skills, programming languages I'm proficient in, and my contact information.",
+    "link": "https://ishantia.ir",
+    "tags": ["Website", "Portfolio"]
    }
 ]
+
 
 
 
