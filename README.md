@@ -1,6 +1,6 @@
 # 💫 Meee
 
-👋 Hey, I’m Shantia Eslami. I’m from Isfahan-Iran. vibe coding and do cool projects like my recent project called TGC
+👋 Hey, I’m Shantia Eslami. I’m from Isfahan-Iran. vibe coding and do cool projects like my recent project called TGC!
 
 ## 🎓 About Me
 
