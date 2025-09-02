@@ -1,6 +1,6 @@
 # 💫 Meee
 
-👋 Hey, I’m Shantia Eslami. I’m from Isfahan-Iran and I’m 17Yo. vibe coding and do cool projects like my recent project called TGC
+👋 Hey, I’m Shantia Eslami. I’m from Isfahan-Iran. vibe coding and do cool projects like my recent project called TGC
 
 ## 🎓 About Me
 
@@ -25,7 +25,6 @@
   - Checks if a given user ID exists inside group databases  
   - If found, retrieves and shows links to their latest messages  
 
-- 🔹 Custom Android mods & scripts  
 - 🔹 Personal utilities & open-source experiments  
 
 ## 🌐 Connect with Me
