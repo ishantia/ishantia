@@ -15,7 +15,9 @@
 - ☕ Java  
 - 💻 C / C++  
 - 🎮 C#  
-- 🤖 Android (basic)  
+- 🤖 Android (basic)
+- 😎 Git & GitHub  
+- 😁 Telegram API   
 
 ## 📂 Current Projects
 
