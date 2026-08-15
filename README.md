@@ -94,14 +94,14 @@ Current_Project: TGC (Telegram User Checker)
 ## 📊 GitHub Analytics
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=ishantia&theme=tokyonight&show_icons=true&hide_border=true&count_private=true" alt="GitHub Stats" width="48%" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ishantia&theme=tokyonight&show_icons=true&hide_border=true&layout=compact" alt="Top Languages" width="48%" />
+  <img src="https://github-stats-extended.vercel.app/api?username=ishantia&theme=tokyonight&show_icons=true&hide_border=true&count_private=true" alt="GitHub Stats" width="48%" />
+  <img src="https://github-stats-extended.vercel.app/api/top-langs/?username=ishantia&theme=tokyonight&show_icons=true&hide_border=true&layout=compact" alt="Top Languages" width="48%" />
 </div>
 
 <br/>
 
 <div align="center">
-  <img src="https://nirzak-streak-stats.vercel.app/?user=ishantia&theme=tokyonight&hide_border=true" alt="Contribution Streak" width="97%" />
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=ishantia&theme=tokyonight&hide_border=true" alt="Contribution Graph" width="97%" />
 </div>
 
 ---
