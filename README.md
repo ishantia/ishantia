@@ -4,10 +4,10 @@
 
 <div align="center">
 
-  [![Telegram](https://img.shields.io/badge/Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/ishantia)
-  [![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/ishantia__)
-  [![Gmail](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:shantiaeslami@gmail.com)
-  [![Buy Me A Coffee](https://img.shields.io/badge/Buy_Me_A_Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/ishantia)
+[![Telegram](https://img.shields.io/badge/Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/ishantia)
+[![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/ishantia__)
+[![Gmail](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:shantiaeslami@gmail.com)
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy_Me_A_Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/ishantia)
 
 </div>
 
@@ -22,7 +22,7 @@ Name: Shantia Eslami
 Location: Isfahan, Iran 🇮🇷
 Role: Student & Tech Enthusiast
 Focus: Vibe Coding, Android Internals & Telegram Automation
-Current_Project: TGC (Telegram User Checker)
+Current_Project: Snowan (Shopping assistant for Entekhab group)
 ```
 
 - 🎓 **Student & Developer** – Passionate about open-source software, problem-solving, and efficient systems.
@@ -34,7 +34,8 @@ Current_Project: TGC (Telegram User Checker)
 
 ## 🚀 Current Projects
 
-### 🔹 [TGC - Telegram User Checker](https://github.com/ishantia) *(Windows Portable App)*
+### 🔹 [TGC - Telegram User Checker](https://github.com/ishantia) _(Windows Portable App)_
+
 > A lightweight, portable Python program for Windows designed to query Telegram group databases and retrieve user activity links.
 
 - 🔑 **Telegram API Token** integration
@@ -45,6 +46,7 @@ Current_Project: TGC (Telegram User Checker)
 ---
 
 ### 🔹 Personal Utilities & Open-Source Experiments
+
 > Custom scripts, system optimizations, network configurations (WireGuard, Pi-hole, Tor), and experimental Telegram bots.
 
 ---
@@ -52,6 +54,7 @@ Current_Project: TGC (Telegram User Checker)
 ## 🛠️ Tech Stack & Ecosystem
 
 ### 💻 Languages & Scripting
+
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![C++](https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)
 ![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=csharp&logoColor=white)
@@ -62,6 +65,7 @@ Current_Project: TGC (Telegram User Checker)
 ![Bash](https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white)
 
 ### 🌐 Frameworks & Web
+
 ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
 ![Django](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white)
 ![.NET](https://img.shields.io/badge/.NET-5C2D91?style=for-the-badge&logo=.net&logoColor=white)
@@ -70,11 +74,13 @@ Current_Project: TGC (Telegram User Checker)
 ![Flutter](https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white)
 
 ### 📱 Mobile & Hardware
+
 ![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)
 ![Arduino](https://img.shields.io/badge/Arduino-00979D?style=for-the-badge&logo=arduino&logoColor=white)
 ![Raspberry Pi](https://img.shields.io/badge/Raspberry%20Pi-C51A4A?style=for-the-badge&logo=raspberrypi&logoColor=white)
 
 ### 🗄️ Databases & Infrastructure
+
 ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
 ![SQLite](https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white)
 ![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)
@@ -82,6 +88,7 @@ Current_Project: TGC (Telegram User Checker)
 ![Nginx](https://img.shields.io/badge/Nginx-009639?style=for-the-badge&logo=nginx&logoColor=white)
 
 ### 🔧 Developer Tools & Systems
+
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 ![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
 ![Telegram API](https://img.shields.io/badge/Telegram_API-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)
