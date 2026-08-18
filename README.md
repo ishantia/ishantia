@@ -14,7 +14,7 @@
   <h3 align="left">Languages and Tools I use</h3>
   <p align="center">
     <a href="https://skillicons.dev">
-      <img src="https://skillicons.dev/icons?i=python,cpp,cs,c,java,kotlin,go,bash,html,react,next,flutter,fastapi,django,dotnet,nodejs,mysql,sqlite,nginx,arduino,git,vscode" />
+      <img src="https://skillicons.dev/icons?i=python,cpp,cs,c,java,kotlin,go,bash,html,css,js,react,next,nest,flutter,fastapi,django,dotnet,nodejs,mysql,sqlite,mongodb,nginx,arduino,git,kubernetes,docker,vscode,cloudflare,linux," />
     </a>
   </p>
  </div>
