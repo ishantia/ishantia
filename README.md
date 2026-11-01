@@ -9,7 +9,9 @@ Student/Developer from Iran, interested in random app development for Android an
 </p>
 
 <p align="center">
-  <a href="https://github.com/ishantia"><img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=ishantia&theme=dracula" width="32%" alt="Repos per language" /></a><a href="https://github.com/ishantia"><img src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=ishantia&theme=dracula&utcOffset=3.5" width="32%" alt="Productive time" /></a><a href="https://github.com/ishantia"><img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=ishantia&theme=dracula" width="32%" alt="GitHub stats" /></a>
+  <a href="https://github.com/ishantia"><img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=ishantia&theme=dracula" width="31%" alt="Repos per language" /></a>
+  <a href="https://github.com/ishantia"><img src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=ishantia&theme=dracula&utcOffset=3.5" width="31%" alt="Productive time" /></a>
+  <a href="https://github.com/ishantia"><img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=ishantia&theme=dracula" width="31%" alt="GitHub stats" /></a>
 </p>
 
 <hr>
