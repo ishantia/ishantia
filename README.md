@@ -3,7 +3,7 @@
 <!--- <img src="https://github.com/SP-XD/SP-XD/blob/main/images/dev-working_rounded.gif?raw=true" href="https://github.com/sp-xd" alt="CoDiNg RocKs"  width="60% align=center"/><br> --->
 <hr></hr>
 <img src="http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=ishantia&theme=tokyonight" width="79% align=center">
-<a  href="https://github.com/SP-XD">
+<a  href="https://github.com/ishantia">
 <img src="http://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=ishantia&theme=tokyonight" width="32.5%">
 <!--<img src="http://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=ishantia&theme=tokyonight" width="32.5%">-->
 <img src="http://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=ishantia&theme=tokyonight&utcOffset=03.30" width="32.5%">
