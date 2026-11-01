@@ -1,5 +1,3 @@
-<img src="https://capsule-render.vercel.app/api?type=waving&height=100&section=header&color=gradient&customColorList=6,11,20" width="100%" alt="" />
-
 ## Hi there 👋 I'm Shantia Eslami
 
 Student/Developer from Iran, interested in random app development for Android and Windows.
@@ -23,5 +21,3 @@ Student/Developer from Iran, interested in random app development for Android an
     <img src="https://skillicons.dev/icons?i=py,cpp,cs,c,java,kotlin,go,bash,html,css,js,react,nextjs,nestjs,flutter,fastapi,django,dotnet,nodejs,mysql,sqlite,mongodb,nginx,arduino,git,kubernetes,docker,vscode,cloudflare,linux&perline=10" alt="Languages and tools" />
   </a>
 </p>
-
-<img src="https://capsule-render.vercel.app/api?type=waving&height=100&section=footer&color=gradient&customColorList=6,11,20" width="100%" alt="" />
